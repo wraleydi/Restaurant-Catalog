@@ -8,29 +8,34 @@
   </head>
   <body>
     <header>
+      <a href="#main-content" class="skip-link">Skip to Content</a>
       <div class="my-header">
-      <div class="title-app">
-        <h2 style="margin: 0;"><span style="color: orange;">F</span>ood shops</h2>
+          <div class="title-app">
+              <h2 style="margin: 0;"><span style="color: orange;">F</span>ood shops</h2>
+          </div>
+          <div class="navbar">
+              <nav role="navigation" aria-label="Main Navigation" style="display: flex;">
+                  <ul class="navbar-menu" id="navbar-menu" hidden>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="#">Favorite</a></li>
+                      <li><a href="#">About Us</a></li>
+                  </ul>
+                  <div class="toggle-menu" tabindex="0" role="button" aria-expanded="false" aria-controls="navbar-menu">
+                      ☰
+                  </div>
+              </nav>
+          </div>
       </div>
-      <div class="navbar">
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Favorite</a></li>
-            <li><a href="#">About Us</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-    </header>
+  </header>
+  <main id="main-content">
     <section>
       <div class="hero-section">
         <div class="hero-text">
           <h1>Kami Ada Membuat Anda Kenyang</h1>
-          <p style="font-size: 1.3rem; margin: 0;">
+          <p>
             "Makanan yang baik adalah dasar dari kebahagiaan yang tulus."
           </p>
-          <p style="font-size: 1.3rem; text-align: center; margin: 0;">
+          <p>
             - Auguste Escoffier -
           </p>
         </div>
@@ -52,8 +57,32 @@
         </div>
       </div>
     </section>
+  </main>
     <footer>
       <p>Raleydi Wardhana © 2024 - Food Shops</p>
     </footer>
+    <script>
+
+      const toggleMenu = document.querySelector('.toggle-menu')
+
+      toggleMenu.addEventListener('click', () => {
+        console.log("Toggle menu diklik!");
+        document.querySelector('.navbar-menu').classList.toggle('navbar-expand')
+        
+        toggleMenu.classList.toggle('remove-menu')
+      })
+
+      window.onscroll = function() {
+        document.querySelector('.navbar-menu').classList.remove('navbar-expand')
+      }
+
+      toggleMenu.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault(); 
+        toggleMenu.click();
+    }
+});
+
+    </script>
   </body>
 </html>
