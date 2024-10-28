@@ -5,14 +5,13 @@
 }
 
 * {
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) ;
-  -webkit-focus-ring-color: rgba(255, 255, 255, 0) ;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0);
 }
 
 body {
   padding: 0;
   margin: 0;
-  
 }
 
 .my-header {
@@ -29,7 +28,7 @@ body {
   padding: 1.2rem;
 }
 
-.navbar ul{
+.navbar ul {
   display: flex;
   list-style: none;
 }
@@ -79,7 +78,7 @@ body {
 
 .hero-text p {
   font-size: 1.2rem;
-  text-align: center; 
+  text-align: center;
   margin: 0;
 }
 
@@ -92,7 +91,7 @@ body {
 }
 
 .hero-image::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -153,7 +152,7 @@ body {
   margin-block-start: 0;
 }
 
-footer p{
+footer p {
   margin: 0;
   padding: 2rem;
   text-align: center;
@@ -181,7 +180,7 @@ footer p{
     margin: 2rem;
   }
 
-  .hero-text h1{
+  .hero-text h1 {
     font-size: 1.5rem;
   }
 
@@ -202,7 +201,6 @@ footer p{
   .hero-text {
     padding: 1rem;
   }
-
 }
 
 @keyframes slideMenu {
@@ -220,36 +218,35 @@ footer p{
   position: fixed;
   left: 0;
   top: 65px;
-    width: 100%;
-    height: 50vh; 
-    z-index: 1000; 
-    background-color: #13181d; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    animation: slideMenu 0.5s ease forwards;
-    padding: 0;
-    margin: 0;
+  width: 100%;
+  height: 50vh;
+  z-index: 1000;
+  background-color: #13181d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: slideMenu 0.5s ease forwards;
+  padding: 0;
+  margin: 0;
 }
 
 .skip-link {
-  position: absolute; 
-  left: -9999px; 
-  top: 0; 
-  z-index: 1000; 
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
   text-decoration: none;
-  
 }
 
 .skip-link:focus {
-  left: 50%; 
-  background-color: orange; 
-  padding: 10px; 
+  left: 50%;
+  background-color: orange;
+  padding: 10px;
   color: #13181d;
 }
 
 .navbar ul li a:focus {
-  outline: 2px solid orange; 
+  outline: 2px solid orange;
   transition: none;
 }

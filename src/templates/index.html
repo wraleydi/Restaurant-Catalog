@@ -1,88 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=storefront" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=storefront"
+    />
     <title>Food Shops</title>
   </head>
   <body>
     <header>
       <a href="#main-content" class="skip-link">Skip to Content</a>
       <div class="my-header">
-          <div class="title-app">
-              <h2 style="margin: 0;"><span style="color: orange;">F</span>ood shops</h2>
+        <div class="title-app">
+          <h2 style="margin: 0">
+            <span style="color: orange">F</span>ood shops
+          </h2>
+        </div>
+        <div class="navbar">
+          <nav
+            role="navigation"
+            aria-label="Main Navigation"
+            style="display: flex"
+          >
+            <ul class="navbar-menu" id="navbar-menu" hidden>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">Favorite</a></li>
+              <li><a href="#">About Us</a></li>
+            </ul>
+            <div
+              class="toggle-menu"
+              tabindex="0"
+              role="button"
+              aria-expanded="false"
+              aria-controls="navbar-menu"
+            >
+              ☰
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main id="main-content">
+      <section>
+        <div class="hero-section">
+          <div class="hero-text">
+            <h1>Kami Ada Membuat Anda Kenyang</h1>
+            <p>"Makanan yang baik adalah dasar dari kebahagiaan yang tulus."</p>
+            <p>- Auguste Escoffier -</p>
           </div>
-          <div class="navbar">
-              <nav role="navigation" aria-label="Main Navigation" style="display: flex;">
-                  <ul class="navbar-menu" id="navbar-menu" hidden>
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="#">Favorite</a></li>
-                      <li><a href="#">About Us</a></li>
-                  </ul>
-                  <div class="toggle-menu" tabindex="0" role="button" aria-expanded="false" aria-controls="navbar-menu">
-                      ☰
-                  </div>
-              </nav>
+          <div class="hero-image">
+            <img src="./images/heros/hero-image_4.jpg" alt="hero image" />
           </div>
-      </div>
-  </header>
-  <main id="main-content">
-    <section>
-      <div class="hero-section">
-        <div class="hero-text">
-          <h1>Kami Ada Membuat Anda Kenyang</h1>
-          <p>
-            "Makanan yang baik adalah dasar dari kebahagiaan yang tulus."
-          </p>
-          <p>
-            - Auguste Escoffier -
-          </p>
         </div>
-        <div class="hero-image">
-          <img src="./images/heros/hero-image_4.jpg" alt="hero image" />
+      </section>
+      <section>
+        <div class="catalog-section">
+          <div class="title-catalog">
+            <span class="material-symbols-outlined"> storefront </span>
+            <h2>Catalog</h2>
+          </div>
+          <div id="container-item"></div>
         </div>
-      </div>
-    </section>
-    <section>
-      <div class="catalog-section">
-        <div class="title-catalog">
-          <span class="material-symbols-outlined">
-            storefront
-            </span>
-          <h2>Catalog</h2>
-        </div>
-        <div id="container-item">
-  
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
     <footer>
       <p>Raleydi Wardhana © 2024 - Food Shops</p>
     </footer>
     <script>
-
-      const toggleMenu = document.querySelector('.toggle-menu')
+      const toggleMenu = document.querySelector('.toggle-menu');
 
       toggleMenu.addEventListener('click', () => {
-        console.log("Toggle menu diklik!");
-        document.querySelector('.navbar-menu').classList.toggle('navbar-expand')
-        
-        toggleMenu.classList.toggle('remove-menu')
-      })
+        console.log('Toggle menu diklik!');
+        document
+          .querySelector('.navbar-menu')
+          .classList.toggle('navbar-expand');
 
-      window.onscroll = function() {
-        document.querySelector('.navbar-menu').classList.remove('navbar-expand')
-      }
+        toggleMenu.classList.toggle('remove-menu');
+      });
+
+      window.onscroll = function () {
+        document
+          .querySelector('.navbar-menu')
+          .classList.remove('navbar-expand');
+      };
 
       toggleMenu.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault(); 
-        toggleMenu.click();
-    }
-});
-
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleMenu.click();
+        }
+      });
     </script>
   </body>
 </html>
