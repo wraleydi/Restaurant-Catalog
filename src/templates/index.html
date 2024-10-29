@@ -27,12 +27,7 @@
             aria-label="Main Navigation"
             style="display: flex"
           >
-            <ul class="navbar-menu" id="navbar-menu" hidden>
-              <li><a href="index.html" tabindex="0">Home</a></li>
-              <li><a href="#" tabindex="0">Favorite</a></li>
-              <li><a href="#" tabindex="0">About Us</a></li>
-            </ul>
-            <div
+          <Button
               class="toggle-menu"
               tabindex="0"
               role="button"
@@ -40,12 +35,17 @@
               aria-controls="navbar-menu"
             >
               ☰
-            </div>
+            </Button>
+            <ul class="navbar-menu" id="navbar-menu" hidden>
+              <li><a href="index.html" tabindex="0">Home</a></li>
+              <li><a href="#" tabindex="0">Favorite</a></li>
+              <li><a href="https://github.com/wraleydi" tabindex="0">About Us</a></li>
+            </ul>
           </nav>
         </div>
       </div>
     </header>
-    <main id="main-content">
+    <main>
       <section>
         <div class="hero-section">
           <div class="hero-text">
@@ -58,7 +58,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section id="main-content">
         <div class="catalog-section">
           <div class="title-catalog">
             <span class="material-symbols-outlined"> storefront </span>

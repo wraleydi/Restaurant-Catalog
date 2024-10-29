@@ -37,10 +37,10 @@ body {
 .navbar ul li a {
   color: white;
   text-decoration: none;
-  margin: 2rem;
   font-size: 1.2rem;
   transition: ease-in-out 0.5s;
   font-family: Quicksand;
+  padding: 2rem;
 }
 
 .navbar ul li a:hover {

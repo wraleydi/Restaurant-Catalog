@@ -3,6 +3,7 @@ import { restaurantApi } from '../remote/api-data.js';
 function displayMenu(restaurant) {
   const itemMenu = document.createElement('div');
   itemMenu.classList.add('card');
+  itemMenu.tabIndex = 0;
 
   itemMenu.innerHTML = `
     <h2>${restaurant.name}</h2>
