@@ -1,13 +1,15 @@
-import { restaurantApi } from '../remote/api-data.js';
+import { getListRestaurant } from '../remote/api-data.js';
 
 function displayMenu(restaurant) {
   const itemMenu = document.createElement('div');
   itemMenu.classList.add('card');
   itemMenu.tabIndex = 0;
 
+  const imgApi = `https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}`
+  console.log(imgApi);
   itemMenu.innerHTML = `
     <h2>${restaurant.name}</h2>
-    <img src="${restaurant.pictureId}" alt="${restaurant.name}">
+    <img src="${imgApi}" alt="${restaurant.name}">
         <p><strong>City:</strong> ${restaurant.city}</p>
         <p><strong>⭐Rating:</strong> ${restaurant.rating}</p>
     `;
@@ -25,7 +27,7 @@ function renderMenu(restaurants) {
 }
 
 async function loadRestaurants() {
-  const restaurants = await restaurantApi();
+  const { restaurants } = await getListRestaurant();
   console.log(restaurants);
   renderMenu(restaurants);
 }

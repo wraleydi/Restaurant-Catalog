@@ -1,9 +1,12 @@
-export const restaurantApi = async () => {
+const BASE_URL = 'https://restaurant-api.dicoding.dev'
+
+const getListRestaurant = async () => {
   try {
-    const response = await fetch('/data/DATA.json');
-    const data = await response.json();
-    return data.restaurants;
+    const response = await fetch(`${BASE_URL}/list`)
+    return await response.json()
   } catch (error) {
-    console.log('error fetch data', error);
+    responseMessage('gagal memuat cek internet anda')
   }
-};
+}
+
+export {getListRestaurant}
