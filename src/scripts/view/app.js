@@ -10,10 +10,16 @@ class App {
 
     async renderPage() {
         const url = UrlParser.parseActiveUrlWithCombiner();
+        console.log('Parsed URL:', url); // Debug log
         const page = routes[url];
+        if (!page) {
+            console.error('Route not found for URL:', url);
+            return;
+        }
         this._content.innerHTML = await page.render();
         await page.afterRender();
-      }
+    }
+    
     }
     
     

@@ -11,11 +11,14 @@ const Detail = {
     },
 
     async afterRender() {
-        const url = UrlParser.parseActiveUrlWithoutCombiner()
-        const restaurant = await getDetailRestaurant(url.id)
-        const container = document.querySelector('#restaurant')
-        container.innerHTML = templateDetail(restaurant)
+        const url = UrlParser.parseActiveUrlWithoutCombiner();
+        console.log('Parsed ID:', url.id); // Debug log
+        const restaurant = await getDetailRestaurant(url.id);
+        console.log('Fetched Restaurant:', restaurant); // Debug log
+        const container = document.querySelector('#restaurant');
+        container.innerHTML = templateDetail(restaurant);
     }
+    
 }
 
 export default Detail;

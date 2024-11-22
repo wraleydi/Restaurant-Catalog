@@ -10,11 +10,8 @@ const app = new App({
 })
 
 window.addEventListener('hashchange', () => {
-    app.renderPage()
-})
-
-window.addEventListener('load', () => {
+    console.log('Hash changed:', window.location.hash); // Debug log
     app.renderPage();
-  });
+});
 
 

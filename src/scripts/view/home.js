@@ -19,7 +19,7 @@ function displayMenu(restaurant) {
 
 function renderMenu(restaurants) {
   const container = document.getElementById('container-item');
-  container.innerHTML = '';
+  
 
   restaurants.forEach((restaurant) => {
     const itemMenu = displayMenu(restaurant);
