@@ -1,7 +1,7 @@
-import Detail from "../view/pages/detail";
+import Detail from '../view/pages/detail';
 
 const routes = {
-    '/detail/:id': Detail,
-  };
-   
-  export default routes;
+  '/detail/:id': Detail,
+};
+
+export default routes;

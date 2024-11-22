@@ -5,7 +5,7 @@ function displayMenu(restaurant) {
   itemMenu.classList.add('card');
   itemMenu.tabIndex = 0;
 
-  const imgApi = `https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}`
+  const imgApi = `https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}`;
   console.log(imgApi);
   itemMenu.innerHTML = `
     <h2>${restaurant.name}</h2>
@@ -19,7 +19,6 @@ function displayMenu(restaurant) {
 
 function renderMenu(restaurants) {
   const container = document.getElementById('container-item');
-  
 
   restaurants.forEach((restaurant) => {
     const itemMenu = displayMenu(restaurant);
