@@ -1,5 +1,20 @@
-import 'regenerator-runtime'; /* for async await transpile */
+import 'regenerator-runtime';
 import '../styles/main.css';
-import './view/restaurant.js';
+import './view/home.js';
+import App from './view/app.js';
 
-console.log('Hello Coders! :)');
+const app = new App({
+    button: document.querySelector('#toggleMenu'),
+    drawer: document.querySelector('#navDrawer'),
+    content: document.querySelector('#main-content')
+})
+
+window.addEventListener('hashchange', () => {
+    app.renderPage()
+})
+
+window.addEventListener('load', () => {
+    app.renderPage();
+  });
+
+

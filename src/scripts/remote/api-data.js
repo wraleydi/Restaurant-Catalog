@@ -9,4 +9,16 @@ const getListRestaurant = async () => {
   }
 }
 
-export {getListRestaurant}
+const getDetailRestaurant = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/detail/${id}`)
+    return await response.json()
+  } catch (error) {
+    responseMessage('gagal memuat cek internet anda')
+  }
+}
+
+export {
+  getListRestaurant,
+  getDetailRestaurant,
+}

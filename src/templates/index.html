@@ -23,11 +23,13 @@
         </div>
         <div class="navbar">
           <nav
+          id="navDrawer"
             role="navigation"
             aria-label="Main Navigation"
             style="display: flex"
           >
           <Button
+          id="toggleMenu"
               class="toggle-menu"
               tabindex="0"
               role="button"
@@ -38,14 +40,14 @@
             </Button>
             <ul class="navbar-menu" id="navbar-menu" hidden>
               <li><a href="index.html" tabindex="0">Home</a></li>
-              <li><a href="#" tabindex="0">Favorite</a></li>
+              <li><a href="#/favorite" tabindex="0">Favorite</a></li>
               <li><a href="https://github.com/wraleydi" tabindex="0">About Us</a></li>
             </ul>
           </nav>
         </div>
       </div>
     </header>
-    <main>
+    <main id="main-content">
       <section>
         <div class="hero-section">
           <div class="hero-text">
@@ -58,7 +60,7 @@
           </div>
         </div>
       </section>
-      <section id="main-content">
+      <section >
         <div class="catalog-section">
           <div class="title-catalog">
             <span class="material-symbols-outlined"> storefront </span>

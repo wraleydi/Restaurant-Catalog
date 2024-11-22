@@ -45,7 +45,7 @@ body {
 
 .navbar ul li a:hover {
   color: orange;
-  border-bottom: 1px solid orange;
+  border-bottom: 2px solid orange;
 }
 
 .toggle-menu {
@@ -258,6 +258,6 @@ footer p {
 }
 
 .navbar ul li a:focus {
-  outline: 2px solid orange;
+  border-bottom: 2px solid orange;
   transition: none;
 }
