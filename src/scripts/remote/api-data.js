@@ -3,7 +3,8 @@ const BASE_URL = 'https://restaurant-api.dicoding.dev';
 const getListRestaurant = async () => {
   try {
     const response = await fetch(`${BASE_URL}/list`);
-    return await response.json();
+    const data = await response.json();
+    return data.restaurants
   } catch (error) {
     responseMessage('gagal memuat cek internet anda');
   }
