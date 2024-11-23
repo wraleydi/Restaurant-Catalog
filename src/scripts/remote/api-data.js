@@ -4,7 +4,7 @@ const getListRestaurant = async () => {
   try {
     const response = await fetch(`${BASE_URL}/list`);
     const data = await response.json();
-    return data.restaurants
+    return data.restaurants;
   } catch (error) {
     responseMessage('gagal memuat cek internet anda');
   }
