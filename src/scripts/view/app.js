@@ -10,8 +10,8 @@ class App {
 
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
-    console.log('Parsed URL:', url);  // Debug log
-    
+    console.log('Parsed URL:', url); // Debug log
+
     const page = routes[url];
     if (!page) {
       console.error('Route not found for URL:', url);
@@ -26,11 +26,10 @@ class App {
         heroSection.style.display = 'block';
       }
     }
-    
+
     this._content.innerHTML = await page.render();
     await page.afterRender();
   }
 }
-
 
 export default App;

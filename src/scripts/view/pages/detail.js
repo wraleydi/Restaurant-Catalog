@@ -1,6 +1,9 @@
 import UrlParser from '../../routes/url-parser';
 import { getDetailRestaurant } from '../../remote/api-data';
-import { templateDetail, createLikeButtonTemplate } from '../templates/template-content';
+import {
+  templateDetail,
+  createLikeButtonTemplate,
+} from '../templates/template-content';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
@@ -26,17 +29,17 @@ const Detail = {
         name: restaurant.name,
         description: restaurant.description,
         city: restaurant.city,
-        
+
         address: restaurant.address,
         pictureId: restaurant.pictureId,
         menus: {
           foods: restaurant.menus.foods,
           drinks: restaurant.menus.drinks,
+        },
+        rating: restaurant.rating,
+        customerReviews: restaurant.customerReviews,
       },
-      rating: restaurant.rating,
-      customerReviews: restaurant.customerReviews,
-      }
-    })
+    });
     console.log('Data restoran saat inisialisasi:', restaurant);
   },
 };

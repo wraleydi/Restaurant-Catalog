@@ -7,18 +7,14 @@ const getListRestaurant = async () => {
     return data.restaurants;
   } catch (error) {
     responseMessage('Gagal memuat, cek internet Anda', error.message);
-    console.error('Error:', error.message); 
+    console.error('Error:', error.message);
   }
 };
-
-
 
 async function getDetailRestaurant(id) {
   try {
     console.log(`Fetching restaurant details for ID: ${id}`);
-    const response = await fetch(
-      `${BASE_URL}/detail/${id}`
-    );
+    const response = await fetch(`${BASE_URL}/detail/${id}`);
     const data = await response.json();
     console.log('Response Data:', data);
     return data.restaurant;
@@ -27,6 +23,5 @@ async function getDetailRestaurant(id) {
     throw error;
   }
 }
-
 
 export { getListRestaurant, getDetailRestaurant };
