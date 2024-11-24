@@ -6,21 +6,27 @@ const getListRestaurant = async () => {
     const data = await response.json();
     return data.restaurants;
   } catch (error) {
-    responseMessage('gagal memuat cek internet anda');
+    responseMessage('Gagal memuat, cek internet Anda', error.message);
+    console.error('Error:', error.message); 
   }
 };
 
+
+
 async function getDetailRestaurant(id) {
-  console.log(`Fetching restaurant details for ID: ${id}`);
-  const response = await fetch(
-    `https://restaurant-api.dicoding.dev/detail/${id}`
-  );
-  const data = await response.json();
-  console.log('Response Data:', data);
-  if (!response.ok) {
-    throw new Error(data.message || 'Failed to fetch restaurant details');
+  try {
+    console.log(`Fetching restaurant details for ID: ${id}`);
+    const response = await fetch(
+      `${BASE_URL}/detail/${id}`
+    );
+    const data = await response.json();
+    console.log('Response Data:', data);
+    return data.restaurant;
+  } catch (error) {
+    console.error('Error fetching restaurant details:', error.message);
+    throw error;
   }
-  return data.restaurant;
 }
+
 
 export { getListRestaurant, getDetailRestaurant };

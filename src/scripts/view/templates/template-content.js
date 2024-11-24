@@ -5,8 +5,14 @@ const templateDetail = (restaurant) => {
         <h2>${restaurant.name}</h2>
         <p><strong>🏢City:</strong> ${restaurant.city}</p>
         <p><strong>Address:</strong> ${restaurant.address}</p>
+        <div class="restaurant_info">
+        <div class="info_image">
         <img src="${imgApi}" alt="${restaurant.name}">
+        </div>
+        <div class="info_description">
         <P>${restaurant.description}</p>
+        </div>
+        </div>
         <h3>Menu</h3>
         <h4>Foods</h4>
     <ul>
@@ -47,4 +53,16 @@ const templateItemRestaurant = (restaurant) => {
   `;
 };
 
-export { templateDetail, templateItemRestaurant };
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this movie" id="likeButton" class="like">
+    <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+ 
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this movie" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+
+export { templateDetail, templateItemRestaurant, createLikeButtonTemplate, createLikedButtonTemplate };
