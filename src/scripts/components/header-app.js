@@ -1,14 +1,14 @@
 class HeaderApp extends HTMLElement {
-    constructor() {
-        super()
-    }
+  constructor() {
+    super();
+  }
 
-    connectedCallback() {
-        this.render()
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    render() {
-        this.innerHTML = `
+  render() {
+    this.innerHTML = `
         <a href="#main-content" class="skip-link">Skip to Content</a>
       <div class="my-header">
         <div class="title-app">
@@ -43,32 +43,32 @@ class HeaderApp extends HTMLElement {
           </nav>
         </div>
       </div>
-        `
+        `;
 
-        const toggleMenu = document.querySelector('.toggle-menu');
+    const toggleMenu = document.querySelector('.toggle-menu');
 
-      toggleMenu.addEventListener('click', () => {
-        console.log('Toggle menu diklik!');
-        document
-          .querySelector('.navbar-menu')
-          .classList.toggle('navbar-expand');
+    toggleMenu.addEventListener('click', () => {
+      console.log('Toggle menu diklik!');
+      document
+        .querySelector('.navbar-menu')
+        .classList.toggle('navbar-expand');
 
-        toggleMenu.classList.toggle('remove-menu');
-      });
+      toggleMenu.classList.toggle('remove-menu');
+    });
 
-      window.onscroll = function () {
-        document
-          .querySelector('.navbar-menu')
-          .classList.remove('navbar-expand');
-      };
+    window.onscroll = function () {
+      document
+        .querySelector('.navbar-menu')
+        .classList.remove('navbar-expand');
+    };
 
-      toggleMenu.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          toggleMenu.click();
-        }
-      });
-    }
+    toggleMenu.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleMenu.click();
+      }
+    });
+  }
 }
 
-customElements.define('header-app', HeaderApp)
+customElements.define('header-app', HeaderApp);

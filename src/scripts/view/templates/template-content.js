@@ -26,15 +26,15 @@ const templateDetail = (restaurant) => {
     <h3>Reviews</h3>
     <div id="reviews">
         ${restaurant.customerReviews
-          .map(
-            (review) => `
+    .map(
+      (review) => `
             <div class="review">
                 <p><strong>${review.name}</strong> (${review.date})</p>
                 <p>"${review.review}"</p>
             </div>
         `
-          )
-          .join('')}
+    )
+    .join('')}
     </div>
 </div>
     `;

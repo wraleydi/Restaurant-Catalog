@@ -1,2 +1,2 @@
-import './header-app'
-import './footer-app'
+import './header-app';
+import './footer-app';

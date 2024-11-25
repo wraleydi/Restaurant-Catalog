@@ -2,7 +2,6 @@ import UrlParser from '../../routes/url-parser';
 import { getDetailRestaurant } from '../../remote/api-data';
 import {
   templateDetail,
-  createLikeButtonTemplate,
 } from '../templates/template-content';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 

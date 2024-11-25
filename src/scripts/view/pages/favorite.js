@@ -6,7 +6,7 @@ const Favorite = {
     return `
         <div class="catalog-section">
           <div class="title-catalog">
-            <span class="material-symbols-outlined"> storefront </span>
+            <img src="./images/icons/storefront.png" alt="storefront" class="material-symbols-outlined" />
             <h2>Your Favorite Restaurant</h2>
           </div>
           <div id="container-item"></div>
