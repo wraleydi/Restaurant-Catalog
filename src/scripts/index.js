@@ -9,17 +9,17 @@ const app = new App({
   drawer: document.querySelector('#navDrawer'),
   content: document.querySelector('#main-content'),
 });
-// Menambahkan listener untuk DOMContentLoaded untuk memastikan DOM sudah sepenuhnya dimuat
+
 window.addEventListener('DOMContentLoaded', () => {
-  // Menampilkan indikator loading saat halaman sedang dimuat
+
   showLoading();
 
-  // Menunggu render halaman dan menampilkan konten
   app.renderPage()
     .then(() => {
       hideLoading();
     })
     .catch((error) => {
+      alert('Terjadi kesalahan saat memuat halaman. Silakan coba lagi.');
       console.error('Error rendering page:', error);
     });
 });
@@ -34,6 +34,7 @@ window.addEventListener('hashchange', () => {
       hideLoading();
     })
     .catch((error) => {
+      alert('Terjadi kesalahan saat memuat halaman. Silakan coba lagi.');
       console.error('Error rendering page:', error);
     });
 });
