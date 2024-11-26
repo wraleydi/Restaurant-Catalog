@@ -35,9 +35,10 @@ const templateDetail = (restaurant) => {
     .map(
       (review) => `
             <div class="review">
-                <p><strong>${review.name}</strong> (${review.date})</p>
+                <p><strong>${review.name}</strong></p>
                 <p>"${review.review}"</p>
-            </div>
+                <p><em>${review.date}</em></p>
+              </div>
         `
     )
     .join('')}

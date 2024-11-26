@@ -23,7 +23,6 @@ const reviewInitiator = {
       const restaurant = await getDetailRestaurant(url.id);
       console.log('Fetched Restaurant:', restaurant);
       const restaurantId = restaurant.id;
-      console.log('Restaurant ID:', restaurantId);
 
       const newReview = {
         id: restaurantId,
