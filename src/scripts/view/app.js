@@ -19,11 +19,14 @@ class App {
     }
 
     const heroSection = document.querySelector('#hero-section');
+    const ctaSection = document.querySelector('#cta-section');
     if (heroSection) {
       if (url !== '/' && url !== '/home') {
         heroSection.style.display = 'none';
+        ctaSection.style.display = 'none';
       } else {
         heroSection.style.display = 'block';
+        ctaSection.style.display = 'block';
       }
     }
 
