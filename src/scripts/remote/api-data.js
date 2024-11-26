@@ -47,7 +47,4 @@ async function addReviewRestaurant(newReview) {
   }
 }
 
-
-
-
 export { getListRestaurant, getDetailRestaurant, addReviewRestaurant };

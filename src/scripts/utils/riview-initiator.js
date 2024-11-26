@@ -1,4 +1,6 @@
-import { addReviewRestaurant } from '../remote/api-data';
+import { addReviewRestaurant, getDetailRestaurant } from '../remote/api-data';
+import UrlParser from '../routes/url-parser';
+import { showLoading, hideLoading } from './indikator-loading';
 
 const reviewInitiator = {
   async init({ reviewContainer, form, nameInput, reviewInput }) {
@@ -17,7 +19,11 @@ const reviewInitiator = {
       const name = this._nameInput.value;
       const review = this._reviewInput.value;
 
-      const restaurantId = this._reviewContainer.dataset.id;
+      const url = UrlParser.parseActiveUrlWithoutCombiner();
+      const restaurant = await getDetailRestaurant(url.id);
+      console.log('Fetched Restaurant:', restaurant);
+      const restaurantId = restaurant.id;
+      console.log('Restaurant ID:', restaurantId);
 
       const newReview = {
         id: restaurantId,
@@ -26,25 +32,36 @@ const reviewInitiator = {
       };
 
       try {
-        const updatedReviews = await addReviewRestaurant(newReview);
+        showLoading();
+        const response = await addReviewRestaurant(newReview);
 
-        // Menampilkan review terbaru
-        const reviewContainer = this._reviewContainer;
-        reviewContainer.innerHTML = updatedReviews.customerReviews
-          .map((review) => `
-            <div class="review">
-              <p><strong>${review.name}</strong></p>
-              <p>"${review.review}"</p>
-            </div>
-          `)
-          .join('');
+        console.log('API Response:', response);
 
-        this._form.reset();
-        alert('Ulasan berhasil ditambahkan!');
+        if (response.customerReviews) {
+          const updatedReviews = response.customerReviews;
+
+          const reviewContainer = this._reviewContainer;
+          reviewContainer.innerHTML = updatedReviews
+            .map((review) => `
+              <div class="review">
+                <p><strong>${review.name}</strong></p>
+                <p>"${review.review}"</p>
+                <p><em>${review.date}</em></p>
+              </div>
+            `)
+            .join('');
+
+          this._form.reset();
+          hideLoading();
+          alert('Ulasan berhasil ditambahkan!');
+        } else {
+          throw new Error('Data ulasan tidak valid');
+        }
       } catch (error) {
         console.error('Failed to submit review:', error);
         alert('Gagal mengirim ulasan. Coba lagi nanti.');
       }
+
     });
   }
 };
