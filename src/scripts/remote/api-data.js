@@ -11,7 +11,7 @@ const getListRestaurant = async () => {
   }
 };
 
-async function getDetailRestaurant(id) {
+const getDetailRestaurant = async (id) =>  {
   try {
     const response = await fetch(`${BASE_URL}/detail/${id}`);
     const data = await response.json();
@@ -20,6 +20,34 @@ async function getDetailRestaurant(id) {
     console.error('Error fetching restaurant details:', error.message);
     throw error;
   }
+};
+
+async function addReviewRestaurant(newReview) {
+  try {
+    const response = await fetch(`${BASE_URL}/review`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newReview),
+    });
+
+    if (!response.ok) {
+      const errorDetails = await response.text();
+      console.error('Error response:', errorDetails);
+      throw new Error(`Failed to submit review: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    console.error('Error submitting review:', error);
+    throw error;
+  }
 }
 
-export { getListRestaurant, getDetailRestaurant };
+
+
+
+export { getListRestaurant, getDetailRestaurant, addReviewRestaurant };

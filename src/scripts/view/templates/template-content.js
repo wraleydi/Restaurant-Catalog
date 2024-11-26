@@ -24,6 +24,12 @@ const templateDetail = (restaurant) => {
         ${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join('')}
     </ul>
     <h3>Reviews</h3>
+    <h4>Tambahkan Review Baru</h4>
+    <form id="addReviewForm">
+        <input type="text" id="reviewName" placeholder="Nama Anda" required />
+        <textarea id="reviewText" placeholder="Tulis ulasan Anda" required></textarea>
+        <button type="submit">Kirim Ulasan</button>
+    </form>
     <div id="reviews">
         ${restaurant.customerReviews
     .map(

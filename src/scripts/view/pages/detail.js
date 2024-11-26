@@ -4,6 +4,7 @@ import {
   templateDetail,
 } from '../templates/template-content';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
+import reviewInitiator from '../../utils/riview-initiator';
 
 const Detail = {
   async render() {
@@ -15,9 +16,9 @@ const Detail = {
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    console.log('Parsed ID:', url.id); // Debug log
+    console.log('Parsed ID:', url.id);
     const restaurant = await getDetailRestaurant(url.id);
-    console.log('Fetched Restaurant:', restaurant); // Debug log
+    console.log('Fetched Restaurant:', restaurant);
     const container = document.querySelector('#restaurant');
     container.innerHTML = templateDetail(restaurant);
 
@@ -39,7 +40,13 @@ const Detail = {
         customerReviews: restaurant.customerReviews,
       },
     });
-    console.log('Data restoran saat inisialisasi:', restaurant);
+
+    reviewInitiator.init({
+      reviewContainer: document.querySelector('#reviews'),
+      form: document.querySelector('#addReviewForm'),
+      nameInput: document.querySelector('#reviewName'),
+      reviewInput: document.querySelector('#reviewText'),
+    });
   },
 };
 
