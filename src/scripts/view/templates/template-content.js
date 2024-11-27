@@ -3,28 +3,38 @@ const templateDetail = (restaurant) => {
   return `
   <div class="detail_restaurant">
         <h2>${restaurant.name}</h2>
+        <div class="location_restaurant">
         <p><strong>🏢City:</strong> ${restaurant.city}</p>
         <p><strong>Address:</strong> ${restaurant.address}</p>
-        <div class="restaurant_info">
-        <div class="info_image">
-        <img src="${imgApi}" alt="${restaurant.name}">
         </div>
+        <div class="restaurant_info">
         <div class="info_description">
         <P>${restaurant.description}</p>
         </div>
+        <div class="info_image">
+        <img src="${imgApi}" alt="${restaurant.name}" width="280px">
         </div>
+        </div>
+        <div class="menus">
         <h3>Menu</h3>
+        </div>
+        <div class="restaurant_menus">
+        <div id="menus" class="foods_menus">
         <h4>Foods</h4>
     <ul>
         ${restaurant.menus.foods.map((food) => `<li>${food.name}</li>`).join('')}
     </ul>
-
+    </div>
+    <div id="menus" class="drinks_menus">
     <h4>Drinks</h4>
     <ul>
         ${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join('')}
     </ul>
-    <h3>Reviews</h3>
+    </div>
+    </div>
+    <div class="reviews_restaurant">
     <h4>Tambahkan Review Baru</h4>
+    <div class="review_form">
     <form id="addReviewForm">
         <input type="text" id="reviewName" placeholder="Nama Anda" required />
         <textarea id="reviewText" placeholder="Tulis ulasan Anda" required></textarea>
@@ -42,6 +52,8 @@ const templateDetail = (restaurant) => {
         `
     )
     .join('')}
+    </div>
+    </div>
     </div>
 </div>
     `;

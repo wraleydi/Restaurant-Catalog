@@ -161,6 +161,11 @@ header {
   font-family: Quicksand, sans-serif;
 }
 
+.card p a {
+  color: rgb(30, 143, 219);
+  font-weight: 700;
+}
+
 .like {
   width: 55px;
   height: 55px;
@@ -222,6 +227,143 @@ header {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.detail_restaurant {
+  background-color: #13181d;
+  color: white;
+  padding: 9rem 6rem;
+}
+
+.detail_restaurant h2 {
+  margin: 0;
+  font-size: 2.4rem;
+  font-family: Poppins, sans-serif;
+  text-align: center;
+}
+
+.location_restaurant {
+  text-align: center;
+  font-family: Quicksand, sans-serif;
+  color: orange;
+}
+
+.restaurant_info {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  margin-block: 6rem;
+  border-radius: 2rem;
+  background-color: orange;
+  box-shadow: 0 0 25px black;
+  color: #13181d;
+  font-family: Quicksand, sans-serif;
+  font-weight: bold;
+}
+
+.restaurant_info p {
+  margin: 0;
+  max-width: 650px;
+  padding-inline-end: 3rem;
+}
+
+.info_image img {
+  width: 300px;
+  border-radius: 2rem;
+}
+
+.menus h3 {
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 2rem;
+}
+
+.restaurant_menus {
+  display: flex;
+  justify-content: center;
+}
+
+#menus {
+  padding: 2rem;
+  margin-block: 3rem;
+}
+
+#menus h4 {
+  font-family: Poppins, sans-serif;
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: orange;
+  text-align: center;
+}
+
+#menus ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0;
+  justify-content: center;
+}
+
+#menus ul li {
+  margin: 20px;
+  text-align: center;
+  font-weight: 700;
+  font-family: Quicksand, sans-serif;
+  background-color: rgb(241, 162, 14);
+  color: white;
+  list-style: none;
+  padding: 1rem;
+}
+
+.reviews_restaurant {
+  padding: 3rem;
+}
+
+.reviews_restaurant h4 {
+  font-family: Poppins, sans-serif;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.review_form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  align-items: start;
+}
+
+.review_form form {
+  display: grid;
+  gap: 3rem;
+  width: 50%;
+}
+
+.review_form form textarea {
+  height: 100px;
+  padding: 0.5rem;
+}
+
+.review_form form input {
+  padding: 0.5rem;
+}
+
+.review_form form button {
+  padding: 0.5rem;
+  background-color: orange;
+  border: none;
+  font-family: Quicksand, sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  color: #13181d;
+}
+
+.review_form form button:hover {
+  background-color: rgb(235, 157, 12);
+}
+
+.review_form #reviews {
+  margin-inline-start: 6rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 footer p {
@@ -322,66 +464,4 @@ footer p {
 .navbar ul li a:focus {
   border-bottom: 2px solid orange;
   transition: none;
-}
-
-.cta_container {
-  position: relative;
-  display: flex;
-  height: 100vh;
-  padding: 5rem;
-  justify-content: start;
-  flex-wrap: wrap;
-  overflow: hidden;
-}
-
-.cta_container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/src/public/images/heros/cta-image.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: brightness(0.7);
-  z-index: 1; 
-}
-
-.cta_description {
-  max-width: 750px;
-  font-size: 1.5rem;
-  font-family: Poppins, sans-serif;
-  padding-inline-start: 3rem;
-  color: white;
-  z-index: 999;
-}
-
-.cta_description p {
-  font-size: 1.4rem;
-  font-family: Quicksand, sans-serif;
-  margin: 0;
-}
-
-.cta_description h1 {
-  margin-block-end: 0.5rem;
-}
-
-.cta_description button {
-  border: none;
-  padding: 1rem;
-  font-size: 1.2rem;
-  font-family: Poppins, sans-serif;
-  font-weight: bold;
-  background-color: orange;
-  color: #13181d;
-  margin-block-start: 3rem;
-  transition: ease-in-out 0.5s;
-  cursor: pointer;
-}
-
-.cta_description button:hover {
-  background-color: #13181d;
-  color: orange;
 }
