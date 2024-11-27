@@ -251,7 +251,7 @@ header {
 .restaurant_info {
   display: flex;
   justify-content: space-between;
-  padding: 3rem;
+  padding: 2rem;
   margin-block: 6rem;
   border-radius: 2rem;
   background-color: orange;
@@ -362,7 +362,7 @@ header {
 }
 
 .review_form #reviews {
-  margin-inline-start: 0rem;
+  margin-inline-start: 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   background-color: orange;
@@ -371,6 +371,7 @@ header {
   overflow-y: scroll;
   height: 600px;
   width: 600px;
+  align-items: start;
 }
 
 #reviews .review {
@@ -380,6 +381,7 @@ header {
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 0 15px #13181d;
+  height: auto;
 }
 
 footer p {
@@ -391,9 +393,50 @@ footer p {
   font-family: Quicksand, sans-serif;
 }
 
+@media (max-width: 910px) {
+  .info_image img {
+    width: 250px;
+  }
+
+  .info_description {
+    font-size: 0.9rem;
+  }
+
+  .detail_restaurant {
+    padding-inline: 2rem;
+  }
+
+  .restaurant_menus {
+    flex-direction: column;
+  }
+
+  .review_form #reviews {
+    grid-template-columns: repeat(1, 1fr);
+    width: 400px;
+  }
+}
+
 @media (max-width: 790px) {
   .my-header {
     padding-inline: 1rem;
+  }
+
+  .title-catalog {
+    font-size: 1.2rem;
+  }
+
+  .restaurant_info {
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .info_description p {
+    padding: 0;
+  }
+
+  .reviews_restaurant {
+    padding: 0rem;
   }
 }
 
@@ -418,6 +461,34 @@ footer p {
   .hero-text p {
     font-size: 1rem;
   }
+
+  .cta_description h1 {
+    font-size: 1.5rem
+  }
+
+  .catalog-section {
+    padding: 2rem;
+  }
+
+  .detail_restaurant {
+    padding-inline: 2rem;
+  }
+
+  .review_form #reviews {
+    width: 250px;
+  }
+}
+
+@media (max-width: 520px) {
+  .review_form {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+
+  .review_form #reviews {
+    margin: 6rem 0rem;
+  }
+  
 }
 
 @media (max-width: 420px) {
@@ -431,6 +502,25 @@ footer p {
 
   .hero-text {
     padding: 1rem;
+  }
+
+  .title-catalog {
+    font-size: 1rem;
+  }
+
+  .info_image img {
+    width: 180px;
+  }
+
+  .info_description p {
+    font-size: 0.7rem;
+  }
+
+  #menus ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    justify-content: center;
   }
 }
 

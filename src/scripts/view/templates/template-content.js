@@ -12,7 +12,7 @@ const templateDetail = (restaurant) => {
         <P>${restaurant.description}</p>
         </div>
         <div class="info_image">
-        <img src="${imgApi}" alt="${restaurant.name}" width="280px">
+        <img src="${imgApi}" alt="${restaurant.name}">
         </div>
         </div>
         <div class="menus">

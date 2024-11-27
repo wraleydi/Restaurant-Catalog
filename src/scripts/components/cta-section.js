@@ -17,6 +17,7 @@ class CtaApp extends HTMLElement {
   height: 100vh;
   padding: 5rem;
   justify-content: start;
+  align-items: center;
   flex-wrap: wrap;
   overflow: hidden;
 }
@@ -72,6 +73,36 @@ class CtaApp extends HTMLElement {
   background-color: #13181d;
   color: orange;
 }
+
+@media (max-width: 670px) {
+  .cta_description p {
+    font-size: 1rem;
+  }
+
+  .cta_container {
+    padding-inline: 2rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .cta_description h1 {
+    font-size: 1.2rem;
+  }
+
+  .cta_description p {
+    font-size: 0.8rem;
+  }
+
+  .cta_description {
+    padding: 0;  
+  }
+
+  .cta_description button {
+    padding: 1rem;  
+    font-size: 1rem;
+  }
+}
+
         </style>
         <div class="cta_discover">
           <div class="cta_container">
