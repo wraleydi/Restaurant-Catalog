@@ -9,7 +9,6 @@ class HeaderApp extends HTMLElement {
 
   render() {
     this.innerHTML = `
-        <a href="#main-content" class="skip-link">Skip to Content</a>
       <div class="my-header">
         <div class="title-app">
           <h2 style="margin: 0">

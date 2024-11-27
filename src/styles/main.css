@@ -163,6 +163,7 @@ header {
 
 .card p a {
   color: rgb(30, 143, 219);
+  padding: 1rem;
   font-weight: 700;
 }
 
@@ -344,11 +345,12 @@ header {
 }
 
 .review_form form input {
-  padding: 0.5rem;
+  padding: 0.8rem;
+  font-size: 1rem;
 }
 
 .review_form form button {
-  padding: 0.5rem;
+  padding: 1rem;
   background-color: orange;
   border: none;
   font-family: Quicksand, sans-serif;
@@ -556,7 +558,7 @@ footer p {
   position: absolute;
   left: -9999px;
   top: 0;
-  z-index: 1000;
+  z-index: 99999;
   text-decoration: none;
 }
 
@@ -565,6 +567,10 @@ footer p {
   background-color: orange;
   padding: 10px;
   color: #13181d;
+}
+
+#main-content:focus {
+  outline: 3px solid #ff0;
 }
 
 .navbar ul li a:focus {

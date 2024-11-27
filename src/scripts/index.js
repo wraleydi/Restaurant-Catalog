@@ -3,6 +3,7 @@ import '../styles/main.css';
 import './components/components.js';
 import App from './view/app.js';
 import { showLoading, hideLoading } from './utils/indikator-loading.js';
+import swRegister from './utils/sw-register.js';
 
 const app = new App({
   button: document.querySelector('#toggleMenu'),
@@ -11,7 +12,7 @@ const app = new App({
 });
 
 window.addEventListener('DOMContentLoaded', () => {
-
+  swRegister();
   showLoading();
 
   app.renderPage()
