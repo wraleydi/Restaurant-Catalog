@@ -329,6 +329,7 @@ header {
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
   align-items: start;
+  padding-block-start: 6rem;
 }
 
 .review_form form {
@@ -361,9 +362,24 @@ header {
 }
 
 .review_form #reviews {
-  margin-inline-start: 6rem;
+  margin-inline-start: 0rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  background-color: orange;
+  padding: 1rem;
+  border-radius: 1rem;
+  overflow-y: scroll;
+  height: 600px;
+  width: 600px;
+}
+
+#reviews .review {
+  background-color: #13181d;
+  color: white;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px #13181d;
 }
 
 footer p {
