@@ -20,6 +20,16 @@ header {
   z-index: 9999;
 }
 
+a, input, button, textarea{
+
+  display: inline-block;
+  
+  min-width: 88px;
+  
+  min-height: 44px;
+  
+  }
+
 .my-header {
   display: flex;
   justify-content: space-between;
@@ -97,6 +107,9 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
+  background-image: url('/src/public/images/heros/hero-image_4.jpg');
+  background-repeat: repeat;
+  background-size: cover;
 }
 
 .hero-image::before {
