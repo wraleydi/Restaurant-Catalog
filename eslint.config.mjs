@@ -3,7 +3,14 @@ import pluginJs from '@eslint/js';
 import daStyle from 'eslint-config-dicodingacademy';
 
 export default [
-  { languageOptions: { globals: globals.browser } },
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        jest: 'readonly',
+      }
+    }
+  },
   pluginJs.configs.recommended,
   daStyle,
 

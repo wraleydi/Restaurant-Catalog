@@ -5,12 +5,12 @@ class App {
   constructor({ button, drawer, content }) {
     this._button = button;
     this._drawer = drawer;
-    this._content = content; // hanya satu elemen content
+    this._content = content;
   }
 
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
-    console.log('Parsed URL:', url); // Debug log
+    console.log('Parsed URL:', url);
 
     const page = routes[url];
     if (!page) {
@@ -19,14 +19,11 @@ class App {
     }
 
     const heroSection = document.querySelector('#hero-section');
-    const ctaSection = document.querySelector('#cta-section');
     if (heroSection) {
       if (url !== '/' && url !== '/home') {
         heroSection.style.display = 'none';
-        ctaSection.style.display = 'none';
       } else {
         heroSection.style.display = 'block';
-        ctaSection.style.display = 'block';
       }
     }
 

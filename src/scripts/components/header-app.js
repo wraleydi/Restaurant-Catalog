@@ -9,6 +9,57 @@ class HeaderApp extends HTMLElement {
 
   render() {
     this.innerHTML = `
+    <style>
+     header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+
+.my-header {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 5rem;
+  background-color: #13181d;
+  align-items: center;
+}
+
+.my-header .title-app {
+  color: white;
+  font-size: 1.5rem;
+  padding: 1.2rem;
+  font-family: Poppins, sans-serif;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul li a {
+display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: ease-in-out 0.5s;
+  font-family: Quicksand;
+  padding: 2rem;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar ul li a:hover {
+  color: orange;
+  border-bottom: 2px solid orange;
+}
+
+.toggle-menu {
+  color: white;
+  font-size: 2rem;
+  display: none;
+  align-items: center;
+  cursor: pointer;
+}
+    </style>
       <div class="my-header">
         <div class="title-app">
           <h2 style="margin: 0">
@@ -32,7 +83,7 @@ class HeaderApp extends HTMLElement {
             >
               ☰
             </div>
-            <ul class="navbar-menu" id="navbar-menu" hidden>
+            <ul class="navbar-menu" id="navbar-menu" style="margin: 0;" hidden>
               <li><a href="#/home" tabindex="0">Home</a></li>
               <li><a href="#/favorite" tabindex="0">Favorite</a></li>
               <li>
