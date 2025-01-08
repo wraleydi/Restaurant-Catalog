@@ -29,7 +29,7 @@ class CtaApp extends HTMLElement {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/images/heros/cta-image.jpg');
+  background-image: url('images/cta/cta-image.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
