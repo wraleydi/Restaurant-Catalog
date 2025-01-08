@@ -70,7 +70,7 @@ const templateItemRestaurant = (restaurant) => {
     <img class="lazyload" data-src="${imgApi}" alt="${restaurant.name}">
         <p><strong>City:</strong> ${restaurant.city}</p>
         <p><strong>⭐Rating:</strong> ${restaurant.rating}</p>
-        <p><a href="/#/detail/${restaurant.id}">lihat selengkapnya</a></p>
+        <p><a href="/#/detail/${restaurant.id}" >lihat selengkapnya</a></p>
   </div>
   `;
 };

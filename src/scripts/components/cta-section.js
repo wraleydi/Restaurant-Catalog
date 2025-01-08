@@ -56,7 +56,7 @@ class CtaApp extends HTMLElement {
   margin-block-end: 0.5rem;
 }
 
-.cta_description button {
+.cta_description a {
   border: none;
   padding: 1rem;
   font-size: 1.2rem;
@@ -67,9 +67,10 @@ class CtaApp extends HTMLElement {
   margin-block-start: 3rem;
   transition: ease-in-out 0.5s;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.cta_description button:hover {
+.cta_description a:hover {
   background-color: #13181d;
   color: orange;
 }
@@ -97,7 +98,7 @@ class CtaApp extends HTMLElement {
     padding: 0;  
   }
 
-  .cta_description button {
+  .cta_description a {
     padding: 1rem;  
     font-size: 1rem;
   }
@@ -109,7 +110,7 @@ class CtaApp extends HTMLElement {
             <div class="cta_description">
               <h1>Temukan Restoran Yang Membuat Lidah Anda Bergoyang –</h1>
               <p>Dari Hidangan Lokal Hingga Cita Rasa Internasional!</p>
-              <button>Jelajahi Restoran</button>
+              <a href="#/home">Jelajahi Restoran</a>
             </div>
           </div>
         </div>
