@@ -9,7 +9,7 @@ const Favorite = {
             <img src="./images/icons/storefront.png" alt="storefront" class="material-symbols-outlined" />
             <h2>Your Favorite Restaurant</h2>
           </div>
-          <h3 class="message_text">No Favorite Restaurant</h3>
+          <h3 class="message_text">*No Favorite Restaurant</h3>
           <div id="container-item"></div>
         </div>
       `;
