@@ -9,6 +9,7 @@ const Favorite = {
             <img src="./images/icons/storefront.png" alt="storefront" class="material-symbols-outlined" />
             <h2>Your Favorite Restaurant</h2>
           </div>
+          <h3 class="message_text">No Favorite Restaurant</h3>
           <div id="container-item"></div>
         </div>
       `;
@@ -17,10 +18,16 @@ const Favorite = {
   async afterRender() {
     const restaurants = await FavoriteRestaurant.getRestaurantsAll();
     const restaurantsContainer = document.querySelector('#container-item');
-
-    restaurants.forEach((restaurant) => {
-      restaurantsContainer.innerHTML += templateItemRestaurant(restaurant);
-    });
+    const messageText = document.querySelector('.message_text')
+    
+    if(restaurants.length === 0) {
+      messageText.style.display = 'block'
+    } else {
+      messageText.style.display = 'none'
+      restaurants.forEach((restaurant) => {
+        restaurantsContainer.innerHTML += templateItemRestaurant(restaurant);
+      });
+    }
   },
 };
 

@@ -66,7 +66,7 @@ const templateItemRestaurant = (restaurant) => {
   const imgApi = `https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}`;
   return `
   <div class="card" id="card" tabindex="0">
-  <h2>${restaurant.name}</h2>
+  <h2 class="title_restaurant">${restaurant.name}</h2>
     <img class="lazyload" data-src="${imgApi}" alt="${restaurant.name}">
         <p><strong>City:</strong> ${restaurant.city}</p>
         <p><strong>⭐Rating:</strong> ${restaurant.rating}</p>
