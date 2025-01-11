@@ -1,1 +1,441 @@
-.hero-section,.title-catalog{justify-content:center;display:flex}.review_form,.review_form #reviews{grid-template-columns:repeat(2,1fr)}*,::after,::before{box-sizing:border-box}*{-webkit-tap-highlight-color:rgba(255,255,255,0);-webkit-focus-ring-color:rgba(255,255,255,0)}body{padding:0;margin:0}a,button,input,textarea{display:inline-block;min-width:44px;min-height:44px}.hero-section{position:relative;align-items:center;height:100vh;overflow:hidden}.hero-text{position:relative;color:#fff;z-index:10;text-align:center;padding:3rem}.hero-image,.hero-image::before{position:absolute;height:100%;left:0;width:100%;top:0}.hero-text h1{font-size:2.2rem;font-family:Poppins,sans-serif}.hero-text p{font-size:1.2rem;text-align:center;margin:0;font-family:Quicksand,sans-serif}.card h2,.title-catalog{font-family:Poppins,sans-serif}.hero-image::before{content:'';background-color:#13181d69;z-index:1}#loading,#overlay,.like{position:fixed}.catalog-section{padding:5rem;padding-block:6rem;padding-block-end:9rem;background-color:#13181d}.title-catalog{align-items:center;color:#fff;text-align:center;font-size:1.8rem}#container-item{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:3rem;padding-block-start:3rem;justify-content:center;text-align:center;align-items:stretch}#container-item .card{background-color:rgba(255,166,0,.884);padding:1.5rem;border-radius:1.5rem;box-shadow:10px 20px 20px rgba(0,0,0,.459);text-align:center}.card img{width:100%;height:200px;border-radius:2rem;object-fit:cover}.card h2{margin-block-start:0}#menus ul li,.card p,.location_restaurant,.restaurant_info,.review_form form button,footer p{font-family:Quicksand,sans-serif}#menus h4,.detail_restaurant h2,.menus h3,.message_text,.reviews_restaurant h4{font-family:Poppins,sans-serif;text-align:center}.card p a{color:#1e8fdb;padding:0;font-weight:700;margin-block-end:0}.like{width:55px;height:55px;display:flex;align-items:center;justify-content:center;background-color:orange;bottom:16px;right:16px;border-radius:50%;border:0;font-size:18px;color:#fff;cursor:pointer;z-index:9999}#overlay{top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.616);z-index:1}#loading{top:50%;left:50%;transform:translate(-50%,-50%);font-size:3rem;color:#918d8d;z-index:9999}.spinner{margin-inline:auto;border:6px solid rgba(0,0,0,.1);width:66px;height:66px;border-radius:50%;border-left-color:#09f;animation:1s ease-out infinite spin}.text-loading{margin-block-start:1rem}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.detail_restaurant{background-color:#13181d;color:#fff;padding:9rem 6rem}.detail_restaurant h2{margin:0;font-size:2.4rem}.location_restaurant{text-align:center;color:orange}.restaurant_info{display:flex;justify-content:space-between;padding:2rem;margin-block:6rem;border-radius:2rem;background-color:orange;box-shadow:0 0 25px #000;color:#13181d;font-weight:700}.restaurant_info p{margin:0;max-width:650px;padding-inline-end:3rem}.info_image img{width:300px;border-radius:2rem}.menus h3{font-size:2rem}#menus h4,.reviews_restaurant h4{font-size:1.6rem}.restaurant_menus{display:flex;justify-content:center}#menus{padding:2rem;margin-block:3rem}#menus h4{font-weight:700;color:orange}#menus ul{display:grid;grid-template-columns:repeat(3,1fr);padding:0;justify-content:center}#menus ul li{margin:20px;text-align:center;font-weight:700;background-color:#f1a20e;color:#fff;list-style:none;padding:1rem}.reviews_restaurant{padding:3rem}.review_form{display:grid;justify-content:space-between;align-items:start;padding-block-start:6rem}.review_form form{display:grid;gap:3rem;width:70%}.review_form form textarea{min-width:100px;height:100px;padding:.5rem}.review_form form input{min-width:100px;padding:.8rem;font-size:1rem}.review_form form button{min-width:100px;padding:1rem;background-color:orange;border:none;font-weight:700;cursor:pointer;color:#13181d}.review_form form button:hover{background-color:#eb9d0c}.review_form #reviews{margin-inline-start:2rem;display:grid;background-color:orange;padding:1rem;border-radius:1rem;overflow-y:scroll;height:600px;width:600px;align-items:start}#reviews .review{background-color:#13181d;color:#fff;margin:1rem;padding:1rem;border-radius:1rem;box-shadow:0 0 15px #13181d;height:auto}footer p{margin:0;padding:2rem;text-align:center;color:#fff;background-color:#13181dfa}@media (max-width:910px){.info_image img{width:250px}.info_description{font-size:.9rem}.detail_restaurant{padding-inline:2rem}.restaurant_menus{flex-direction:column}.review_form #reviews{grid-template-columns:repeat(1,1fr);width:400px}}@media (max-width:790px){.my-header{padding-inline:1rem}.title-catalog{font-size:1.2rem}.restaurant_info{flex-direction:column;justify-content:center;margin:auto}.info_description p,.reviews_restaurant{padding:0}}@media (max-width:670px){.navbar .navbar-menu{display:none}.navbar .toggle-menu{display:flex;padding-inline-end:1rem}.hero-text h1{font-size:1.4rem}.hero-text p{font-size:1rem}.cta_description h1{font-size:1.5rem}.catalog-section{padding:2rem}.detail_restaurant{padding-inline:2rem}.review_form #reviews{width:250px}}@media (max-width:520px){.review_form{grid-template-columns:repeat(1,1fr);justify-items:center}.review_form #reviews{margin:6rem 0}}@media (max-width:420px){.my-header{padding-inline:0}.my-header .title-app{font-size:1rem}.hero-text{padding:1rem}.info_image img{width:180px}.info_description p{font-size:.7rem}#menus ul{display:grid;grid-template-columns:repeat(2,1fr);padding:0;justify-content:center}}@keyframes slideMenu{from{transform:translateX(-100%);opacity:0}to{transform:translateX(0);opacity:1}}.navbar-menu.navbar-expand{position:fixed;left:0;top:65px;width:100%;height:50vh;z-index:1000;background-color:#13181d;display:flex;flex-direction:column;justify-content:center;align-items:center;animation:.5s forwards slideMenu;padding:0;margin:0}.skip-link{position:absolute;left:-9999px;top:0;z-index:99999;text-decoration:none}.skip-link:focus{left:50%;background-color:orange;padding:10px;color:#13181d}#main-content:focus{outline:#ff0 solid 3px}.navbar ul li a:focus{border-bottom:2px solid orange;transition:none}.message_text{color:#eb1e1e}
+.hero-section,.title-catalog {
+    justify-content:center;
+    display:flex
+}
+.review_form,.review_form #reviews {
+    grid-template-columns:repeat(2,1fr)
+}
+*,::after,::before {
+    box-sizing:border-box
+}
+* {
+    -webkit-tap-highlight-color:rgba(255,255,255,0);
+    -webkit-focus-ring-color:rgba(255,255,255,0)
+}
+body {
+    padding:0;
+    margin:0
+}
+a,button,input,textarea {
+    display:inline-block;
+    min-width:44px;
+    min-height:44px
+}
+.hero-section {
+    position:relative;
+    align-items:center;
+    height:100vh;
+    overflow:hidden
+}
+.hero-text {
+    position:relative;
+    color:#fff;
+    z-index:10;
+    text-align:center;
+    padding:3rem
+}
+.hero-image,.hero-image::before {
+    position:absolute;
+    height:100%;
+    left:0;
+    width:100%;
+    top:0
+}
+.hero-text h1 {
+    font-size:2.2rem;
+    font-family:Poppins,sans-serif
+}
+.hero-text p {
+    font-size:1.2rem;
+    text-align:center;
+    margin:0;
+    font-family:Quicksand,sans-serif
+}
+.card h2,.title-catalog {
+    font-family:Poppins,sans-serif
+}
+.hero-image::before {
+    content:'';
+    background-color:#13181d69;
+    z-index:1
+}
+#loading,#overlay,.like {
+    position:fixed
+}
+.catalog-section {
+    padding:5rem;
+    padding-block:6rem;
+    padding-block-end:9rem;
+    background-color:#13181d
+}
+.title-catalog {
+    align-items:center;
+    color:#fff;
+    text-align:center;
+    font-size:1.8rem
+}
+#container-item {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:3rem;
+    padding-block-start:3rem;
+    justify-content:center;
+    text-align:center;
+    align-items:stretch
+}
+#container-item .card {
+    background-color:rgba(255,166,0,.884);
+    padding:1.5rem;
+    border-radius:1.5rem;
+    box-shadow:10px 20px 20px rgba(0,0,0,.459);
+    text-align:center
+}
+.card img {
+    width:100%;
+    height:200px;
+    border-radius:2rem;
+    object-fit:cover
+}
+.card h2 {
+    margin-block-start:0
+}
+#menus ul li,.card p,.location_restaurant,.restaurant_info,.review_form form button,footer p {
+    font-family:Quicksand,sans-serif
+}
+#menus h4,.detail_restaurant h2,.menus h3,.message_text,.reviews_restaurant h4 {
+    font-family:Poppins,sans-serif;
+    text-align:center
+}
+.card p a {
+    color:#1e8fdb;
+    padding:0;
+    font-weight:700;
+    margin-block-end:0
+}
+.like {
+    width:55px;
+    height:55px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color:orange;
+    bottom:16px;
+    right:16px;
+    border-radius:50%;
+    border:0;
+    font-size:18px;
+    color:#fff;
+    cursor:pointer;
+    z-index:9999
+}
+#overlay {
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.616);
+    z-index:1
+}
+#loading {
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:3rem;
+    color:#918d8d;
+    z-index:9999
+}
+.spinner {
+    margin-inline:auto;
+    border:6px solid rgba(0,0,0,.1);
+    width:66px;
+    height:66px;
+    border-radius:50%;
+    border-left-color:#09f;
+    animation:1s ease-out infinite spin
+}
+.text-loading {
+    margin-block-start:1rem
+}
+@keyframes spin {
+    0% {
+        transform:rotate(0)
+    }
+    100% {
+        transform:rotate(360deg)
+    }
+}
+.detail_restaurant {
+    background-color:#13181d;
+    color:#fff;
+    padding:9rem 6rem
+}
+.detail_restaurant h2 {
+    margin:0;
+    font-size:2.4rem
+}
+.location_restaurant {
+    text-align:center;
+    color:orange
+}
+.restaurant_info {
+    display:flex;
+    justify-content:space-between;
+    padding:2rem;
+    margin-block:6rem;
+    border-radius:2rem;
+    background-color:orange;
+    box-shadow:0 0 25px #000;
+    color:#13181d;
+    font-weight:700
+}
+.restaurant_info p {
+    margin:0;
+    max-width:650px;
+    padding-inline-end:3rem
+}
+.info_image img {
+    width:300px;
+    border-radius:2rem
+}
+.menus h3 {
+    font-size:2rem
+}
+#menus h4,.reviews_restaurant h4 {
+    font-size:1.6rem
+}
+.restaurant_menus {
+    display:flex;
+    justify-content:center
+}
+#menus {
+    padding:2rem;
+    margin-block:3rem
+}
+#menus h4 {
+    font-weight:700;
+    color:orange
+}
+#menus ul {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    padding:0;
+    justify-content:center
+}
+#menus ul li {
+    margin:20px;
+    text-align:center;
+    font-weight:700;
+    background-color:#f1a20e;
+    color:#fff;
+    list-style:none;
+    padding:1rem
+}
+.reviews_restaurant {
+    padding:3rem
+}
+.review_form {
+    display:grid;
+    justify-content:space-between;
+    align-items:start;
+    padding-block-start:6rem
+}
+.review_form form {
+    display:grid;
+    gap:3rem;
+    width:70%
+}
+.review_form form textarea {
+    background-color: white;
+  color: black;
+    min-width:100px;
+    height:100px;
+    padding:.5rem
+}
+.review_form form input {
+    background-color: white;
+  color: black;
+    min-width:100px;
+    padding:.8rem;
+    font-size:1rem
+}
+.review_form form button {
+    min-width:100px;
+    padding:1rem;
+    background-color:orange;
+    border:none;
+    font-weight:700;
+    cursor:pointer;
+    color:#13181d
+}
+.review_form form button:hover {
+    background-color:#eb9d0c
+}
+.review_form #reviews {
+    margin-inline-start:2rem;
+    display:grid;
+    background-color:orange;
+    padding:1rem;
+    border-radius:1rem;
+    overflow-y:scroll;
+    height:600px;
+    width:600px;
+    align-items:start
+}
+#reviews .review {
+    background-color:#13181d;
+    color:#fff;
+    margin:1rem;
+    padding:1rem;
+    border-radius:1rem;
+    box-shadow:0 0 15px #13181d;
+    height:auto
+}
+footer p {
+    margin:0;
+    padding:2rem;
+    text-align:center;
+    color:#fff;
+    background-color:#13181dfa
+}
+@media (max-width:910px) {
+    .info_image img {
+        width:250px
+    }
+    .info_description {
+        font-size:.9rem
+    }
+    .detail_restaurant {
+        padding-inline:2rem
+    }
+    .restaurant_menus {
+        flex-direction:column
+    }
+    .review_form #reviews {
+        grid-template-columns:repeat(1,1fr);
+        width:400px
+    }
+}
+@media (max-width:790px) {
+    .my-header {
+        padding-inline:1rem
+    }
+    .title-catalog {
+        font-size:1.2rem
+    }
+    .restaurant_info {
+        flex-direction:column;
+        justify-content:center;
+        margin:auto
+    }
+    .info_description p,.reviews_restaurant {
+        padding:0
+    }
+}
+@media (max-width:670px) {
+    .navbar .navbar-menu {
+        display:none
+    }
+    .navbar .toggle-menu {
+        display:flex;
+        padding-inline-end:1rem
+    }
+    .hero-text h1 {
+        font-size:1.4rem
+    }
+    .hero-text p {
+        font-size:1rem
+    }
+    .cta_description h1 {
+        font-size:1.5rem
+    }
+    .catalog-section {
+        padding:2rem
+    }
+    .detail_restaurant {
+        padding-inline:2rem
+    }
+    .review_form #reviews {
+        width:250px
+    }
+}
+@media (max-width:520px) {
+    .review_form {
+        grid-template-columns:repeat(1,1fr);
+        justify-items:center
+    }
+    .review_form #reviews {
+        margin:6rem 0
+    }
+}
+@media (max-width:420px) {
+    .my-header {
+        padding-inline:0
+    }
+    .my-header .title-app {
+        font-size:1rem
+    }
+    .hero-text {
+        padding:1rem
+    }
+    .info_image img {
+        width:180px
+    }
+    .info_description p {
+        font-size:.7rem
+    }
+    #menus ul {
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        padding:0;
+        justify-content:center
+    }
+}
+@keyframes slideMenu {
+    from {
+        transform:translateX(-100%);
+        opacity:0
+    }
+    to {
+        transform:translateX(0);
+        opacity:1
+    }
+}
+.navbar-menu.navbar-expand {
+    position:fixed;
+    left:0;
+    top:65px;
+    width:100%;
+    height:50vh;
+    z-index:1000;
+    background-color:#13181d;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    animation:.5s forwards slideMenu;
+    padding:0;
+    margin:0
+}
+.skip-link {
+    position:absolute;
+    left:-9999px;
+    top:0;
+    z-index:99999;
+    text-decoration:none
+}
+.skip-link:focus {
+    left:50%;
+    background-color:orange;
+    padding:10px;
+    color:#13181d
+}
+#main-content:focus {
+    outline:#ff0 solid 3px
+}
+.navbar ul li a:focus {
+    border-bottom:2px solid orange;
+    transition:none
+}
+.message_text {
+    color:#eb1e1e
+}
