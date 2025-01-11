@@ -48,8 +48,8 @@ const templateDetail = (restaurant) => {
     .map(
       (review) => `
             <div class="review">
-                <p><strong>${review.name}</strong></p>
-                <p>"${review.review}"</p>
+                <p class="review_name"><strong>${review.name}</strong></p>
+                <p class="review_text">"${review.review}"</p>
                 <p><em>${review.date}</em></p>
               </div>
         `
