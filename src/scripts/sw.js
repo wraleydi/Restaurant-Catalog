@@ -18,6 +18,13 @@ const restaurantImageApi = new Route(
   }),
 );
 
+registerRoute(
+  ({ url }) => url.pathname.startsWith('/images/heros/'),
+  new StaleWhileRevalidate({
+    cacheName: 'hero-images-cache',
+  })
+);
+
 registerRoute(restaurantApi);
 registerRoute(restaurantImageApi);
 
