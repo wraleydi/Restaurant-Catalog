@@ -2,3 +2,5 @@
 
 
 aplikasi ini menggunakan PWA dan Testing automation
+
+saya hosting juga di netlify: https://inspiring-kulfi-f9fcfc.netlify.app/
