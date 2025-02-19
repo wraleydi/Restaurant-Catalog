@@ -28,6 +28,17 @@ const Favorite = {
         restaurantsContainer.innerHTML += templateItemRestaurant(restaurant);
       });
     };
+
+    const messageText = document.querySelector('.message_text');
+
+    if (restaurants.length === 0) {
+      messageText.style.display = 'block';
+    } else {
+      messageText.style.display = 'none';
+      restaurants.forEach((restaurant) => {
+        restaurantsContainer.innerHTML += templateItemRestaurant(restaurant);
+      });
+    }
   },
 };
 

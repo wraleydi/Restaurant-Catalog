@@ -48,8 +48,8 @@ const templateDetail = (restaurant) => {
     .map(
       (review) => `
             <div class="review">
-                <p><strong>${review.name}</strong></p>
-                <p>"${review.review}"</p>
+                <p class="review_name"><strong>${review.name}</strong></p>
+                <p class="review_text">"${review.review}"</p>
                 <p><em>${review.date}</em></p>
               </div>
         `
@@ -66,11 +66,11 @@ const templateItemRestaurant = (restaurant) => {
   const imgApi = `https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}`;
   return `
   <div class="card" id="card" tabindex="0">
-  <h2>${restaurant.name}</h2>
+  <h2 class="title_restaurant">${restaurant.name}</h2>
     <img class="lazyload" data-src="${imgApi}" alt="${restaurant.name}">
         <p><strong>City:</strong> ${restaurant.city}</p>
         <p><strong>⭐Rating:</strong> ${restaurant.rating}</p>
-        <p><a href="/#/detail/${restaurant.id}">lihat selengkapnya</a></p>
+        <p class="restaurant_detail" style="margin: 0;"><a href="/#/detail/${restaurant.id}" >lihat selengkapnya</a></p>
   </div>
   `;
 };

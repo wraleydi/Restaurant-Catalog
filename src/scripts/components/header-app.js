@@ -61,6 +61,7 @@ display: inline-block;
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 @media (max-width: 420px) {
   .my-header {
     padding-inline: 0;
@@ -69,6 +70,15 @@ display: inline-block;
   .my-header .title-app {
     font-size: 1rem;
   }
+
+@media (max-width:420px) {
+    .my-header {
+        padding-inline:0
+    }
+    .my-header .title-app {
+        font-size:1rem
+    }
+
 }
     </style>
       <div class="my-header">

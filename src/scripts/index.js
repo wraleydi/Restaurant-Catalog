@@ -35,6 +35,8 @@ window.addEventListener('hashchange', () => {
   app.renderPage()
     .then(() => {
       hideLoading();
+
+      window.scrollTo(0, 0);
     })
     .catch((error) => {
       alert('Terjadi kesalahan saat memuat halaman. Silakan coba lagi.');
