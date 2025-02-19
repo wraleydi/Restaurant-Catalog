@@ -24,11 +24,12 @@ class HeaderApp extends HTMLElement {
   align-items: center;
 }
 
-.my-header .title-app {
+.my-header .title-app a{
   color: white;
   font-size: 1.5rem;
   padding: 1.2rem;
   font-family: Poppins, sans-serif;
+  text-decoration: none;
 }
 
 .navbar ul {
@@ -59,12 +60,24 @@ display: inline-block;
   align-items: center;
   cursor: pointer;
 }
+
+@media (max-width: 420px) {
+  .my-header {
+    padding-inline: 0;
+  }
+
+  .my-header .title-app {
+    font-size: 1rem;
+  }
+}
     </style>
       <div class="my-header">
         <div class="title-app">
+        <a href="#/home">
           <h2 style="margin: 0">
             <span style="color: orange">F</span>ood shops
           </h2>
+        </a>
         </div>
         <div class="navbar">
           <nav

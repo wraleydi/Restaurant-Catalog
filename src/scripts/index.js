@@ -28,6 +28,8 @@ window.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('hashchange', () => {
   console.log('Hash changed:', window.location.hash);
 
+  window.scrollTo(0, 0);
+
   showLoading();
 
   app.renderPage()
