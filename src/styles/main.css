@@ -396,7 +396,7 @@ footer p {
     }
 }
 
-@media (max-width:420px) {
+@media (max-width:450px) {
     .hero-text {
         padding:1rem
     }
@@ -411,6 +411,26 @@ footer p {
         grid-template-columns:repeat(2,1fr);
         padding:0;
         justify-content:center
+    }
+    .catalog-section {
+        padding: 0.5rem;
+    }
+    #container-item {
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+        gap: 0.5rem;
+    }
+    .card__content {
+        padding: 0.5rem;
+    }
+    .card__content h2 {
+        font-size: 1.1rem;
+    }
+    .card__content p {
+        font-size: 0.8rem;
+        -webkit-line-clamp: 3;
+    }
+    .card .card__header__image img {
+        height: 120px;
     }
 }
 @keyframes slideMenu {
