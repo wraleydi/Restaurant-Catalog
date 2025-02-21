@@ -61,14 +61,28 @@ display: inline-block;
   cursor: pointer;
 }
 
-@media (max-width:420px) {
+@media (max-width:910px) {
+    .my-header {
+        padding-inline: 0;
+}
+
+@media (max-width:670px) {
+    .my-header {
+        padding-inline: 0;
+    }
+}
+
+@media (max-width:490px) {
     .my-header {
         padding-inline:0
     }
     .my-header .title-app {
         font-size:1rem
     }
-
+    .my-header .title-app a {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
 }
     </style>
       <div class="my-header">
