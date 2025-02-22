@@ -39,24 +39,20 @@ const templateDetail = (restaurant) => {
         <label for="c1" class="card__menus">
             <div class="icon">></div>
             <div class="row">
+              <h4>Foods</h4>
                 <div class="description__menus">
-                    <h4>Foods</h4>
-                    <table>
-                        <tbody>
-                            ${restaurant.menus.foods
+                ${restaurant.menus.foods
     .map(
-      (food, index) => `
-                                ${index % 4 === 0 ? '<tr>' : ''}
-                                    <td>
-                                        <img src="../../images/icons/food.jpg" alt="${food.name}" width="50px">
-                                        <span>${food.name}</span>
-                                    </td>
-                                ${index % 4 === 3 || index === restaurant.menus.foods.length - 1 ? '</tr>' : ''}
-                            `
+      (food) => `
+                    <div class="menu_card">
+                            <img src="../../images/icons/food.jpg" alt="${food.name}" height="70px">
+                        <div class="menu_name">
+                            <p>${food.name}</p>
+                        </div>
+                    </div>
+                `
     )
     .join('')}
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </label>
@@ -65,24 +61,20 @@ const templateDetail = (restaurant) => {
         <label for="c2" class="card__menus">
             <div class="icon">></div>
             <div class="row">
+              <h4>Drinks</h4>
                 <div class="description__menus">
-                    <h4>Drinks</h4>
-                    <table>
-                        <tbody>
-                            ${restaurant.menus.drinks
-    .map(
-      (drink, index) => `
-                                ${index % 4 === 0 ? '<tr>' : ''}
-                                    <td>
-                                        <img src="../../images/icons/drink.PNG" alt="${drink.name}" width="50px">
-                                        <span>${drink.name}</span>
-                                    </td>
-                                ${index % 4 === 3 || index === restaurant.menus.drinks.length - 1 ? '</tr>' : ''}
-                            `
-    )
-    .join('')}
-                        </tbody>
-                    </table>
+                ${restaurant.menus.drinks
+                  .map(
+                    (drink) => `
+                                  <div class="menu_card">
+                                          <img src="../../images/icons/drink.PNG" alt="${drink.name}" height="70px">
+                                      <div class="menu_name">
+                                          <p>${drink.name}</p>
+                                      </div>
+                                  </div>
+                              `
+                  )
+                  .join('')}
                 </div>
             </div>
         </label>

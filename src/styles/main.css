@@ -246,7 +246,7 @@ footer p {
   background: #ff8000;
   box-shadow:
     inset 15px 15px 19px #b85c00,
-    inset -15px -15px 19px #ffa400; /* Warna oren transparan */
+    inset -15px -15px 19px #ffa400;
   padding: 10px;
   color: white;
   font-weight: bold;
@@ -269,9 +269,10 @@ footer p {
   align-items: center;
   justify-content: center;
   font-family: Poppins, sans-serif;
+  background-color: #13181d;
 }
 .restaurant_menus {
-  height: 400px;
+  height: 500px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: start;
@@ -285,56 +286,80 @@ footer p {
   overflow: hidden;
   margin: 0 10px;
   display: flex;
-  align-items: center;
+  align-items: start;
   transition: 1s cubic-bezier(0.28, -0.03, 0, 0.99);
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
 }
 .card__menus > .row {
   color: white;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
+  margin-block-start: 2rem;
+}
+.row h4 {
+    text-align: center;
 }
 .card__menus > .icon {
   background: #223;
   color: white;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: 15px;
+  left: 20px;
   bottom: 15px;
 }
 .card__menus > .row > .description__menus {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
+  align-items: start;
+  height: 350px;
   flex-direction: column;
-  width: 1000px;
+  width: 1100px;
   opacity: 0;
   transform: translateX(100px);
   transition-delay: 0.8s;
   transition: all 0.8s ease;
 }
-.description__menus p {
-  color: #b0b0ba;
-  padding-top: 5px;
-  height: 380px;
+.card__menus h4 {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  margin-block: 0 1rem;
+}
+.description__menus {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding-inline: 2rem;
+    height: 380px;
+    overflow-y: scroll;
 }
 
-.description__menus h4 {
-  text-transform: uppercase;
+.menu_card {
+    display: flex;
+    background-color: #ff8000;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    align-items: start;
 }
+
+.menu_card img {
+    object-fit: cover;  
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.menu_name p {
+    font-size: 1rem;
+    margin-inline: 0.5rem;
+    margin-block: 0;
+    color: #13181d;
+}
+
 input {
   display: none;
 }
 
 input:checked + label {
-  width: 1000px;
+  width: 1100px;
 }
 
 input:checked + label .description__menus {
