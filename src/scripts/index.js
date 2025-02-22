@@ -15,7 +15,8 @@ window.addEventListener('DOMContentLoaded', () => {
   swRegister();
   showLoading();
 
-  app.renderPage()
+  app
+    .renderPage()
     .then(() => {
       hideLoading();
     })
@@ -32,7 +33,8 @@ window.addEventListener('hashchange', () => {
 
   showLoading();
 
-  app.renderPage()
+  app
+    .renderPage()
     .then(() => {
       hideLoading();
 

@@ -21,7 +21,9 @@ Scenario('Liking and Unliking restaurant from favorite', async ({ I }) => {
 
   I.amOnPage('/#/favorite');
 
-  const visibleRestaurants = await I.grabNumberOfVisibleElements('.restaurant_detail a');
+  const visibleRestaurants = await I.grabNumberOfVisibleElements(
+    '.restaurant_detail a'
+  );
   if (visibleRestaurants > 0) {
     const likedRestaurantTitle = await I.grabTextFrom('.restaurant_detail a');
     strictEqual(firstRestaurantTitle, likedRestaurantTitle);
@@ -31,11 +33,15 @@ Scenario('Liking and Unliking restaurant from favorite', async ({ I }) => {
     I.click('#likeButton');
 
     I.amOnPage('/#/favorite');
-    const updatedRestaurants = await I.grabNumberOfVisibleElements('.restaurant_detail a');
-    strictEqual(updatedRestaurants, 0, 'No restaurants should remain in favorites');
+    const updatedRestaurants = await I.grabNumberOfVisibleElements(
+      '.restaurant_detail a'
+    );
+    strictEqual(
+      updatedRestaurants,
+      0,
+      'No restaurants should remain in favorites'
+    );
   } else {
     I.see('No Favorite Restaurant', '.message_text');
   }
 });
-
-

@@ -3,7 +3,6 @@ Feature('Add Review Restaurant');
 
 // eslint-disable-next-line no-undef
 Scenario('Add Review From Restaurant', async ({ I }) => {
-
   I.amOnPage('/');
   I.see('Catalog', '.title-catalog');
   I.seeElement('.card');

@@ -41,13 +41,15 @@ const reviewInitiator = {
 
           const reviewContainer = this._reviewContainer;
           reviewContainer.innerHTML = updatedReviews
-            .map((review) => `
+            .map(
+              (review) => `
               <div class="review">
                 <p class="review_name"><strong>${review.name}</strong></p>
                 <p class="review_text">"${review.review}"</p>
                 <p><em>${review.date}</em></p>
               </div>
-            `)
+            `
+            )
             .join('');
 
           this._form.reset();
@@ -60,9 +62,8 @@ const reviewInitiator = {
         console.error('Failed to submit review:', error);
         alert('Gagal mengirim ulasan. Coba lagi nanti.');
       }
-
     });
-  }
+  },
 };
 
 export default reviewInitiator;

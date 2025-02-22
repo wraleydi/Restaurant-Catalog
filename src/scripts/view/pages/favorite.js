@@ -27,7 +27,7 @@ const Favorite = {
       restaurants.forEach((restaurant) => {
         restaurantsContainer.innerHTML += templateItemRestaurant(restaurant);
       });
-    };
+    }
 
     const messageText = document.querySelector('.message_text');
 

@@ -4,7 +4,7 @@ import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 const templateDetail = (restaurant) => {
   const imgApi = `https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}`;
   return `
-   <div class="restaurant_info" style="
+  <div class="restaurant_info" style="
         background: linear-gradient(115deg ,rgb(19, 24, 29, 0.97) 40%, rgba(19, 24, 29, 0.5)),
             url('${imgApi}');
             background-size: cover;
@@ -18,7 +18,7 @@ const templateDetail = (restaurant) => {
         <h2 style="margin: 0;">${restaurant.name}</h2>
         </div>
         <div class="info_description">
-        <P>${restaurant.description}</p>
+        <p>${restaurant.description}</p>
         </div>
         <div class="location_restaurant">
     <div class="info_wrapper">
@@ -33,23 +33,62 @@ const templateDetail = (restaurant) => {
         </div>
         </div>
         <h3>Menu</h3>
-  <div class="detail_restaurant">
         <div class="menus">
-        <div class="restaurant_menus">
-        <div id="menus" class="foods_menus">
-        <h4>Foods</h4>
-    <ul>
-        ${restaurant.menus.foods.map((food) => `<li>${food.name}</li>`).join('')}
-    </ul>
+    <div class="restaurant_menus">
+        <input type="radio" name="slide" id="c1" checked>
+        <label for="c1" class="card__menus">
+            <div class="icon">></div>
+            <div class="row">
+                <div class="description__menus">
+                    <h4>Foods</h4>
+                    <table>
+                        <tbody>
+                            ${restaurant.menus.foods
+    .map(
+      (food, index) => `
+                                ${index % 4 === 0 ? '<tr>' : ''}
+                                    <td>
+                                        <img src="../../images/icons/food.jpg" alt="${food.name}" width="50px">
+                                        <span>${food.name}</span>
+                                    </td>
+                                ${index % 4 === 3 || index === restaurant.menus.foods.length - 1 ? '</tr>' : ''}
+                            `
+    )
+    .join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </label>
+
+        <input type="radio" name="slide" id="c2">
+        <label for="c2" class="card__menus">
+            <div class="icon">></div>
+            <div class="row">
+                <div class="description__menus">
+                    <h4>Drinks</h4>
+                    <table>
+                        <tbody>
+                            ${restaurant.menus.drinks
+    .map(
+      (drink, index) => `
+                                ${index % 4 === 0 ? '<tr>' : ''}
+                                    <td>
+                                        <img src="../../images/icons/drink.PNG" alt="${drink.name}" width="50px">
+                                        <span>${drink.name}</span>
+                                    </td>
+                                ${index % 4 === 3 || index === restaurant.menus.drinks.length - 1 ? '</tr>' : ''}
+                            `
+    )
+    .join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </label>
     </div>
-    <div id="menus" class="drinks_menus">
-    <h4>Drinks</h4>
-    <ul>
-        ${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join('')}
-    </ul>
-    </div>
-    </div>
-    </div>
+</div>
+    <div class="detail_restaurant">
     <div class="reviews_restaurant">
     <h4>Tambahkan Review Baru</h4>
     <div class="review_form">
@@ -70,6 +109,7 @@ const templateDetail = (restaurant) => {
         `
     )
     .join('')}
+    </div>
     </div>
     </div>
     </div>

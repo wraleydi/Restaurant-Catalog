@@ -66,7 +66,10 @@ module.exports = {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
           globOptions: {
-            ignore: process.env.NODE_ENV === 'production' ? ['**/images/heros/**'] : [],
+            ignore:
+              process.env.NODE_ENV === 'production'
+                ? ['**/images/heros/**']
+                : [],
           },
         },
       ],

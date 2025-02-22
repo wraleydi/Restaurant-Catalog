@@ -1,7 +1,6 @@
 class CtaApp extends HTMLElement {
   constructor() {
     super();
-
   }
 
   connectedCallback() {

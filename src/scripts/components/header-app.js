@@ -126,17 +126,13 @@ display: inline-block;
 
     toggleMenu.addEventListener('click', () => {
       console.log('Toggle menu diklik!');
-      document
-        .querySelector('.navbar-menu')
-        .classList.toggle('navbar-expand');
+      document.querySelector('.navbar-menu').classList.toggle('navbar-expand');
 
       toggleMenu.classList.toggle('remove-menu');
     });
 
     window.onscroll = function () {
-      document
-        .querySelector('.navbar-menu')
-        .classList.remove('navbar-expand');
+      document.querySelector('.navbar-menu').classList.remove('navbar-expand');
     };
 
     toggleMenu.addEventListener('keydown', (event) => {

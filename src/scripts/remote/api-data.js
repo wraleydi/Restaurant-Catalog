@@ -11,7 +11,7 @@ const getListRestaurant = async () => {
   }
 };
 
-const getDetailRestaurant = async (id) =>  {
+const getDetailRestaurant = async (id) => {
   try {
     const response = await fetch(`${BASE_URL}/detail/${id}`);
     const data = await response.json();

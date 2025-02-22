@@ -24,7 +24,9 @@ describe('Unliking A restaurant', () => {
       },
     });
 
-    expect(document.querySelector('[aria-label="unlike this restaurant"]')).toBeTruthy();
+    expect(
+      document.querySelector('[aria-label="unlike this restaurant"]')
+    ).toBeTruthy();
   });
 
   it('should not display like widget when the restaurant has been liked', async () => {
@@ -35,7 +37,9 @@ describe('Unliking A restaurant', () => {
       },
     });
 
-    expect(document.querySelector('[aria-label="like this restaurant"]')).toBeFalsy();
+    expect(
+      document.querySelector('[aria-label="like this restaurant"]')
+    ).toBeFalsy();
   });
 
   it('should be able to remove liked restaurant from the list', async () => {
@@ -45,7 +49,9 @@ describe('Unliking A restaurant', () => {
         id: 1,
       },
     });
-    document.querySelector('[aria-label="unlike this restaurant"]').dispatchEvent(new Event('click'));
+    document
+      .querySelector('[aria-label="unlike this restaurant"]')
+      .dispatchEvent(new Event('click'));
     expect(await FavoriteRestaurant.getRestaurantsAll()).toEqual([]);
   });
 
@@ -59,7 +65,9 @@ describe('Unliking A restaurant', () => {
 
     await FavoriteRestaurant.deleteRestaurant(1);
 
-    document.querySelector('[aria-label="unlike this restaurant"]').dispatchEvent(new Event('click'));
+    document
+      .querySelector('[aria-label="unlike this restaurant"]')
+      .dispatchEvent(new Event('click'));
     expect(await FavoriteRestaurant.getRestaurantsAll()).toEqual([]);
   });
 });

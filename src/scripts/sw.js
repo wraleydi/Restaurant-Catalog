@@ -8,14 +8,17 @@ const restaurantApi = new Route(
   ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev'),
   new StaleWhileRevalidate({
     cacheName: 'restaurant-api',
-  }),
+  })
 );
 
 const restaurantImageApi = new Route(
-  ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev/images/large/<pictureId>'),
+  ({ url }) =>
+    url.href.startsWith(
+      'https://restaurant-api.dicoding.dev/images/large/<pictureId>'
+    ),
   new StaleWhileRevalidate({
     cacheName: 'restaurant-image-api',
-  }),
+  })
 );
 
 registerRoute(

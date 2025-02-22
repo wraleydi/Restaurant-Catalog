@@ -8,8 +8,8 @@ export default [
       globals: {
         ...globals.browser,
         jest: 'readonly',
-      }
-    }
+      },
+    },
   },
   pluginJs.configs.recommended,
   daStyle,
