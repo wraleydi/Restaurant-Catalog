@@ -4,23 +4,37 @@ import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 const templateDetail = (restaurant) => {
   const imgApi = `https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}`;
   return `
-  <div class="detail_restaurant">
-        <h2>${restaurant.name}</h2>
-        <div class="location_restaurant">
-        <p><strong>🏢City:</strong> ${restaurant.city}</p>
-        <p><strong>Address:</strong> ${restaurant.address}</p>
+   <div class="restaurant_info" style="
+        background: linear-gradient(115deg ,rgb(19, 24, 29, 0.97) 40%, rgba(19, 24, 29, 0.5)),
+            url('${imgApi}');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 90vh;
+            color: white;
+        ">
+        <div class="restaurant_info__content">
+        <div class="title_content">
+        <h2 style="margin: 0;">${restaurant.name}</h2>
         </div>
-        <div class="restaurant_info">
         <div class="info_description">
         <P>${restaurant.description}</p>
         </div>
-        <div class="info_image">
-        <img src="${imgApi}" alt="${restaurant.name}">
+        <div class="location_restaurant">
+    <div class="info_wrapper">
+        <p>🏢</p>
+        <span><strong>City:</strong> ${restaurant.city}</span>
+    </div>
+    <div class="info_wrapper">
+        <p>📍</p>
+        <span><strong>Address:</strong> ${restaurant.address}</span>
+    </div>
+</div>
         </div>
         </div>
-        <div class="menus">
         <h3>Menu</h3>
-        </div>
+  <div class="detail_restaurant">
+        <div class="menus">
         <div class="restaurant_menus">
         <div id="menus" class="foods_menus">
         <h4>Foods</h4>
@@ -33,6 +47,7 @@ const templateDetail = (restaurant) => {
     <ul>
         ${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join('')}
     </ul>
+    </div>
     </div>
     </div>
     <div class="reviews_restaurant">

@@ -17,7 +17,7 @@ a,button,input,textarea {
 .hero-section {
     position:relative;
     align-items:center;
-    height:100vh;
+    height:90vh;
     overflow:hidden
 }
 .hero-text {
@@ -119,10 +119,10 @@ a,button,input,textarea {
     font-weight: 500;
 }
 
-#menus ul li,.card p,.location_restaurant,.restaurant_info,.review_form form button,footer p {
+#menus ul li,.card p,.restaurant_info,.review_form form button,footer p {
   font-family:Quicksand,sans-serif
 }
-#menus h4,.detail_restaurant h2,.menus h3,.message_text,.reviews_restaurant h4 {
+#menus h4,.menus h3,.message_text,.reviews_restaurant h4 {
   font-family:Poppins,sans-serif;
   text-align:center
 }
@@ -188,66 +188,79 @@ a,button,input,textarea {
     color:#fff;
     padding:9rem 6rem
 }
-.detail_restaurant h2 {
-    margin:0;
-    font-size:2.4rem
+.restaurant_info__content {
+    max-width: 1300px;
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+}
+.restaurant_info__content .title_content {
+    color: orange;
+    font-size: 2rem;
+    font-family: Poppins, sans-serif;
+}
+.restaurant_info__content .info_description {
+    max-width: 750px;
+    width: 100%;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    font-weight: 500;
 }
 .location_restaurant {
-    text-align:center;
-    color:orange
+    display: flex;
+    gap: 10px;
+    max-width: 700px;
+    margin-block-start: 2rem; 
 }
-.restaurant_info {
-    display:flex;
-    justify-content:space-between;
-    padding:2rem;
-    margin-block:6rem;
-    border-radius:2rem;
-    background-color:orange;
-    box-shadow:0 0 25px #000;
-    color:#13181d;
-    font-weight:700
+
+.info_wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-items: center;
+    border-radius: 0.5rem;
+background: #ff8000;
+box-shadow: inset 15px 15px 19px #b85c00,
+            inset -15px -15px 19px #ffa400; /* Warna oren transparan */
+    padding: 10px;
+    color: white;
+    font-weight: bold;
 }
-.restaurant_info p {
-    margin:0;
-    max-width:650px;
-    padding-inline-end:3rem
+
+.info_wrapper p {
+    font-size: 18px;
+    margin: 0;
 }
-.info_image img {
-    width:300px;
-    border-radius:2rem
-}
-.menus h3 {
-    font-size:2rem
+
+.info_wrapper span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 #menus h4,.reviews_restaurant h4 {
     font-size:1.6rem
 }
 .restaurant_menus {
-    display:flex;
-    justify-content:center
+    
 }
 #menus {
-    padding:2rem;
-    margin-block:3rem
+    
 }
 #menus h4 {
-    font-weight:700;
-    color:orange
+    
 }
 #menus ul {
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    padding:0;
-    justify-content:center
+
 }
 #menus ul li {
-    margin:20px;
-    text-align:center;
-    font-weight:700;
-    background-color:#f1a20e;
-    color:#fff;
-    list-style:none;
-    padding:1rem
+    
 }
 .reviews_restaurant {
     padding:3rem

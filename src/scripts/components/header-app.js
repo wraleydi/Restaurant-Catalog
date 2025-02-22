@@ -19,7 +19,7 @@ class HeaderApp extends HTMLElement {
 .my-header {
   display: flex;
   justify-content: space-between;
-  padding-inline: 5rem;
+  padding-inline: 2rem;
   background-color: #13181d;
   align-items: center;
 }
