@@ -133,13 +133,15 @@ textarea {
 .card p,
 .restaurant_info,
 .review_form form button,
-footer p {
+footer p,
+.menu_card p {
   font-family: Quicksand, sans-serif;
 }
 #menus h4,
 .menus h3,
 .message_text,
-.reviews_restaurant h4 {
+.reviews_restaurant h4,
+.card__menus h4 {
   font-family: Poppins, sans-serif;
   text-align: center;
 }
@@ -272,7 +274,7 @@ footer p {
   background-color: #13181d;
 }
 .restaurant_menus {
-  height: 500px;
+  height: 480px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: start;
@@ -281,57 +283,54 @@ footer p {
   position: relative;
   width: 80px;
   border-radius: 1rem;
-  background-color: #13181d;
   cursor: pointer;
   overflow: hidden;
   margin: 0 10px;
   display: flex;
   align-items: start;
-  transition: 1s cubic-bezier(0.28, -0.03, 0, 0.99);
+  transition: 1.5s ease-in-out;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
 }
 .card__menus > .row {
   color: white;
-  margin-block-start: 2rem;
-}
-.row h4 {
-    text-align: center;
+  margin-block-start: 0.5rem;
 }
 .card__menus > .icon {
   background: #223;
   color: white;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: 20px;
-  bottom: 15px;
+  left: 15px;
+  bottom: 7px;
 }
 .card__menus > .row > .description__menus {
-  align-items: start;
-  height: 350px;
+  max-height: 350px;
   flex-direction: column;
   width: 1100px;
   opacity: 0;
-  transform: translateX(100px);
-  transition-delay: 0.8s;
-  transition: all 0.8s ease;
+  transform: translateX(200px);
+  transition-delay: 1.2s;
+  transition: all 1.2s ease;
 }
 .card__menus h4 {
   text-transform: uppercase;
-  font-size: 1.4rem;
-  margin-block: 0 1rem;
+  font-size: 2rem;
+  margin-block: 0 0.5rem;
+  text-align: center;
 }
 .description__menus {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
     padding-inline: 2rem;
-    height: 380px;
-    overflow-y: scroll;
+    grid-auto-rows: auto;
+    align-items: start;
+    overflow-y: auto;
 }
 
 .menu_card {
@@ -340,20 +339,20 @@ footer p {
     border-radius: 0.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     align-items: start;
+    height: auto;
 }
 
 .menu_card img {
     object-fit: cover;  
     border-radius: 0.5rem 0 0 0.5rem;
+    width: 110px;
 }
-
-.menu_name p {
-    font-size: 1rem;
-    margin-inline: 0.5rem;
-    margin-block: 0;
-    color: #13181d;
+.menu_card p {
+  color: #13181d;
+  margin: 0.5rem 0 0 0.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
 }
-
 input {
   display: none;
 }
@@ -364,7 +363,7 @@ input:checked + label {
 
 input:checked + label .description__menus {
   opacity: 1 !important;
-  transform: translateY(0) !important;
+  transform: translateX(0) !important;
 }
 .reviews_restaurant h4 {
   font-size: 1.6rem;
@@ -615,4 +614,15 @@ footer p {
 .navbar ul li a:focus {
   border-bottom: 2px solid orange;
   transition: none;
+}
+
+.card__menus[for="c1"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('../public/images/foods/food-bg.jpg');
+  background-size: cover;
+}
+.card__menus[for="c2"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('../public/images/drinks/drink-bg.jpg');
+  background-size: cover;
 }

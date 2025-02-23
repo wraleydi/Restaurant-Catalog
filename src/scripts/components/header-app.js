@@ -27,7 +27,7 @@ class HeaderApp extends HTMLElement {
 .my-header .title-app a{
   color: white;
   font-size: 1.5rem;
-  padding: 1.2rem;
+  padding: 0.5rem 1rem ;
   font-family: Poppins, sans-serif;
   text-decoration: none;
 }
@@ -44,7 +44,7 @@ display: inline-block;
   font-size: 1.2rem;
   transition: ease-in-out 0.5s;
   font-family: Quicksand;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   border-bottom: 2px solid transparent;
 }
 

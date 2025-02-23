@@ -1,5 +1,7 @@
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import getRandomPrice from '../../utils/random-price-menus';
+import getRandomImage from '../../utils/random-image-menus';
 
 const templateDetail = (restaurant) => {
   const imgApi = `https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}`;
@@ -39,16 +41,17 @@ const templateDetail = (restaurant) => {
         <label for="c1" class="card__menus">
             <div class="icon">></div>
             <div class="row">
-              <h4>Foods</h4>
+              <h4>Foods Menus</h4>
                 <div class="description__menus">
                 ${restaurant.menus.foods
     .map(
       (food) => `
                     <div class="menu_card">
-                            <img src="../../images/icons/food.jpg" alt="${food.name}" height="70px">
-                        <div class="menu_name">
+                            <img src="${getRandomImage('food')}" alt="${food.name}" height="70px">
+                            <div class="menu_description">
                             <p>${food.name}</p>
-                        </div>
+                            <p>💵Rp ${getRandomPrice().toLocaleString("id-ID")}
+                            </div>
                     </div>
                 `
     )
@@ -61,15 +64,18 @@ const templateDetail = (restaurant) => {
         <label for="c2" class="card__menus">
             <div class="icon">></div>
             <div class="row">
-              <h4>Drinks</h4>
+              <h4>Drinks Menus</h4>
                 <div class="description__menus">
                 ${restaurant.menus.drinks
                   .map(
                     (drink) => `
                                   <div class="menu_card">
-                                          <img src="../../images/icons/drink.PNG" alt="${drink.name}" height="70px">
+                                          <img src="${getRandomImage('drink')}" alt="${drink.name}" height="70px">
                                       <div class="menu_name">
+                                      <div class="menu_description">
                                           <p>${drink.name}</p>
+                                          <p>💵Rp ${getRandomPrice().toLocaleString("id-ID")}
+                                        </div>
                                       </div>
                                   </div>
                               `
