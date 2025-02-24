@@ -34,8 +34,8 @@ const templateDetail = (restaurant) => {
 </div>
         </div>
         </div>
-        <h3>Menu</h3>
         <div class="menus">
+        <h3>🍽️Restaurant Menu</h3>
     <div class="restaurant_menus">
         <input type="radio" name="slide" id="c1" checked>
         <label for="c1" class="card__menus">

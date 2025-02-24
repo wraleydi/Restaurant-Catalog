@@ -88,7 +88,7 @@ textarea {
   padding-block-start: 3rem;
 }
 #container-item .card {
-  background-color: rgba(255, 166, 0, 0.884);
+  background-color: orange;
   border-radius: 0.5rem;
   box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.459);
 }
@@ -141,7 +141,8 @@ footer p,
 .menus h3,
 .message_text,
 .reviews_restaurant h4,
-.card__menus h4 {
+.card__menus h4,
+.title_menus h3 {
   font-family: Poppins, sans-serif;
   text-align: center;
 }
@@ -228,15 +229,15 @@ footer p,
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
-  font-weight: 500;
+  font-weight: 400;
 }
 .location_restaurant {
   display: flex;
   gap: 10px;
   max-width: 700px;
-  margin-block-start: 2rem;
+  margin-block-start: 3rem;
 }
 
 .info_wrapper {
@@ -272,12 +273,19 @@ footer p,
   justify-content: center;
   font-family: Poppins, sans-serif;
   background-color: #13181d;
+  flex-direction: column;
 }
 .restaurant_menus {
   height: 480px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: start;
+}
+.menus h3 {
+  margin: 2rem 0 6rem 0;
+  font-size: 2.4rem;
+  background-color: #13181d;
+  color: orange;
 }
 .card__menus {
   position: relative;
@@ -288,7 +296,7 @@ footer p,
   margin: 0 10px;
   display: flex;
   align-items: start;
-  transition: 1.5s ease-in-out;
+  transition: 1.5s ease-out;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
 }
 .card__menus > .row {
@@ -335,7 +343,7 @@ footer p,
 
 .menu_card {
     display: flex;
-    background-color: #ff8000;
+    background-color: orange;
     border-radius: 0.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     align-items: start;
@@ -353,7 +361,7 @@ footer p,
   font-weight: 500;
   font-size: 1.1rem;
 }
-input {
+.restaurant_menus input {
   display: none;
 }
 
