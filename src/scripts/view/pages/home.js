@@ -1,5 +1,5 @@
 import { getListRestaurant } from '../../remote/api-data';
-import { templateItemRestaurant } from '../templates/template-content';
+import templateItemRestaurant from '../templates/template-item-restaurant';
 
 const Home = {
   async render() {

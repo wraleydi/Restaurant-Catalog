@@ -1,5 +1,3 @@
-import 'lazysizes';
-import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import getRandomPrice from '../../utils/random-price-menus';
 import getRandomImage from '../../utils/random-image-menus';
 
@@ -35,7 +33,6 @@ const templateDetail = (restaurant) => {
         </div>
         </div>
         <div class="menus">
-        <h3>🍽️Restaurant Menu</h3>
     <div class="restaurant_menus">
         <input type="radio" name="slide" id="c1" checked>
         <label for="c1" class="card__menus">
@@ -50,7 +47,7 @@ const templateDetail = (restaurant) => {
                             <img src="${getRandomImage('food')}" alt="${food.name}" height="70px">
                             <div class="menu_description">
                             <p>${food.name}</p>
-                            <p>💵Rp ${getRandomPrice().toLocaleString("id-ID")}
+                            <p>💵Rp ${getRandomPrice().toLocaleString('id-ID')}
                             </div>
                     </div>
                 `
@@ -67,20 +64,20 @@ const templateDetail = (restaurant) => {
               <h4>Drinks Menus</h4>
                 <div class="description__menus">
                 ${restaurant.menus.drinks
-                  .map(
-                    (drink) => `
+    .map(
+      (drink) => `
                                   <div class="menu_card">
                                           <img src="${getRandomImage('drink')}" alt="${drink.name}" height="70px">
                                       <div class="menu_name">
                                       <div class="menu_description">
                                           <p>${drink.name}</p>
-                                          <p>💵Rp ${getRandomPrice().toLocaleString("id-ID")}
+                                          <p>💵Rp ${getRandomPrice().toLocaleString('id-ID')}
                                         </div>
                                       </div>
                                   </div>
                               `
-                  )
-                  .join('')}
+    )
+    .join('')}
                 </div>
             </div>
         </label>
@@ -115,44 +112,4 @@ const templateDetail = (restaurant) => {
     `;
 };
 
-const templateItemRestaurant = (restaurant) => {
-  const imgApi = `https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}`;
-  return `
-  <div class="card" id="card" tabindex="0">
-  <div class="card__header">
-  <div class="card__header__image">
-    <img class="lazyload" data-src="${imgApi}" alt="${restaurant.name}">
-  </div>
-  <div class="card__header__rating">
-    <p style="margin: 0;">⭐ </strong> ${restaurant.rating}</p>
-  </div>
-  </div>
-  <a href="/#/detail/${restaurant.id}" >
-  <div class="card__content">
-    <h2 class="title_restaurant">${restaurant.name}</h2>
-        <p style="font-weight: 600; margin-block-start: 0;"><strong>🗺️ </strong> ${restaurant.city}</p>
-        <p style="margin: 0;">${restaurant.description}</p>
-      </div>
-  </a>
-  </div>
-  `;
-};
-
-const createLikeButtonTemplate = () => `
-  <button aria-label="like this restaurant" id="likeButton" class="like">
-    <i class="fa fa-heart-o" aria-hidden="true"></i>
-  </button>
-`;
-
-const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this restaurant" id="likeButton" class="like">
-    <i class="fa fa-heart" aria-hidden="true"></i>
-  </button>
-`;
-
-export {
-  templateDetail,
-  templateItemRestaurant,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
-};
+export default templateDetail;

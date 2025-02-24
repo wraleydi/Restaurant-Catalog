@@ -1,6 +1,6 @@
 import UrlParser from '../../routes/url-parser';
 import { getDetailRestaurant } from '../../remote/api-data';
-import { templateDetail } from '../templates/template-content';
+import templateDetail from '../templates/template-detail-restaurant';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 import reviewInitiator from '../../utils/riview-initiator';
 

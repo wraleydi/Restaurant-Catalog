@@ -203,6 +203,9 @@ footer p,
     transform: rotate(360deg);
   }
 }
+.restaurant {
+  background-color: #13181d;
+}
 .detail_restaurant {
   background-color: #13181d;
   color: #fff;
@@ -273,7 +276,7 @@ footer p,
   justify-content: center;
   font-family: Poppins, sans-serif;
   background-color: #13181d;
-  flex-direction: column;
+  margin-block: 5rem;
 }
 .restaurant_menus {
   height: 480px;
