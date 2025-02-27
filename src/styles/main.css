@@ -19,6 +19,10 @@ textarea {
   min-width: 44px;
   min-height: 44px;
 }
+input,
+textarea {
+  font-size: 0.9rem;
+}
 .hero-section {
   position: relative;
   align-items: center;
@@ -132,7 +136,6 @@ textarea {
 #menus ul li,
 .card p,
 .restaurant_info,
-.review_form form button,
 footer p,
 .menu_card p {
   font-family: Quicksand, sans-serif;
@@ -142,7 +145,8 @@ footer p,
 .message_text,
 .reviews_restaurant h4,
 .card__menus h4,
-.title_menus h3 {
+.title_menus h3,
+.review_form #addReviewForm button {
   font-family: Poppins, sans-serif;
   text-align: center;
 }
@@ -299,7 +303,7 @@ footer p,
   margin: 0 10px;
   display: flex;
   align-items: start;
-  transition: 1.5s ease-out;
+  transition: 1.8s ease-out;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
 }
 .card__menus > .row {
@@ -376,76 +380,84 @@ input:checked + label .description__menus {
   opacity: 1 !important;
   transform: translateX(0) !important;
 }
-.reviews_restaurant h4 {
-  font-size: 1.6rem;
-}
-.reviews_restaurant {
-  padding: 3rem;
-}
-.review_form,
-.review_form #reviews {
-  grid-template-columns: repeat(2, 1fr);
-}
-.review_form {
-  display: grid;
-  justify-content: space-between;
-  align-items: start;
-  padding-block-start: 6rem;
-}
-.review_form form {
-  display: grid;
-  gap: 3rem;
-  width: 70%;
-}
-.review_form form textarea {
-  background-color: white;
-  color: black;
-  min-width: 100px;
-  height: 100px;
-  padding: 0.5rem;
-}
-.review_form form input {
-  background-color: white;
-  color: black;
-  min-width: 100px;
-  padding: 0.8rem;
-  font-size: 1rem;
-}
-.review_form form button {
-  min-width: 100px;
-  padding: 1rem;
-  background-color: orange;
-  border: none;
-  font-weight: 700;
-  cursor: pointer;
-  color: #13181d;
-}
-.review_form form button:hover {
-  background-color: #eb9d0c;
-}
-.review_form #reviews {
-  margin-inline-start: 2rem;
-  display: grid;
-  background-color: orange;
-  padding: 1rem;
-  border-radius: 1rem;
-  overflow-y: scroll;
-  height: 600px;
-  width: 600px;
-  align-items: start;
-}
-#reviews .review {
-  background-color: #13181d;
-  color: #fff;
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 15px #13181d;
-  height: auto;
-}
 
 .message_text {
   color: red;
+}
+
+.reviews_restaurant {
+  max-width: 1250px;
+  margin: auto;
+}
+
+.reviews_restaurant .title_section__reviews {
+  color: white;
+  font-size: 2rem;
+  border-top: 4px solid orange;
+  margin-inline: 3rem;
+  padding-block-start: 1rem;
+}
+
+.review_container {
+  display: flex;
+  color: white;
+  justify-content: center;
+  gap: 2rem;
+  padding-inline: 3rem; 
+}
+
+.review_container #reviews {
+  width: 70%;
+  border: 2px solid #09f;
+}
+.review_form {
+  width: 30%;
+}
+.review_form #addReviewForm {
+  display: flex;
+  flex-direction: column;
+  background-color: orange;
+  border-radius: 5px;
+  gap: 1.5rem;
+  padding: 0.5rem;
+  font-family: Poppins, sans-serif;
+  margin-block-start: 0.5rem;
+}
+input::placeholder,
+textarea::placeholder {
+  font-family: 'Poppins', sans-serif; 
+  font-size: 0.9rem;
+  color: #cfcbcb; 
+}
+.review_form #addReviewForm input {
+  background-color: #13181d;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+}
+
+.review_form #addReviewForm textarea {
+  background-color: #13181d;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  height: 130px;
+}
+.review_form #addReviewForm button {
+  background-color: #1e252c;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.review_form .title_form {
+  padding: 0.5rem 0rem;
+  border: 1px solid orange;
+  border-radius: 5px;
 }
 
 footer p {

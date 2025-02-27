@@ -83,15 +83,11 @@ const templateDetail = (restaurant) => {
         </label>
     </div>
 </div>
-    <div class="detail_restaurant">
     <div class="reviews_restaurant">
-    <h4>Tambahkan Review Baru</h4>
-    <div class="review_form">
-    <form id="addReviewForm">
-        <input type="text" id="reviewName" placeholder="Nama Anda" required />
-        <textarea id="reviewText" placeholder="Tulis ulasan Anda" required></textarea>
-        <button type="submit">Kirim Ulasan</button>
-    </form>
+    <div class="title_section__reviews">
+    <h4 style="margin-block-start: 0;">Reviews Restaurant</h4>
+    </div>
+    <div class="review_container">
     <div id="reviews">
         ${restaurant.customerReviews
     .map(
@@ -105,7 +101,15 @@ const templateDetail = (restaurant) => {
     )
     .join('')}
     </div>
+    <div class="review_form">
+    <div class="title_form">
+    <h4 style="margin: 0;">Add Review</h4>
     </div>
+    <form id="addReviewForm">
+        <input type="text" id="reviewName" placeholder="Your Name" required />
+        <textarea id="reviewText" placeholder="Your Review" required></textarea>
+        <button type="submit"> Save </button>
+    </form>
     </div>
     </div>
 </div>
