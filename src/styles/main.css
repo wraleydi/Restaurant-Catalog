@@ -339,28 +339,28 @@ footer p,
   text-align: center;
 }
 .description__menus {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-    padding-inline: 2rem;
-    grid-auto-rows: auto;
-    align-items: start;
-    overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding-inline: 2rem;
+  grid-auto-rows: auto;
+  align-items: start;
+  overflow-y: auto;
 }
 
 .menu_card {
-    display: flex;
-    background-color: orange;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    align-items: start;
-    height: auto;
+  display: flex;
+  background-color: orange;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  align-items: start;
+  height: auto;
 }
 
 .menu_card img {
-    object-fit: cover;  
-    border-radius: 0.5rem 0 0 0.5rem;
-    width: 110px;
+  object-fit: cover;
+  border-radius: 0.5rem 0 0 0.5rem;
+  width: 110px;
 }
 .menu_card p {
   color: #13181d;
@@ -403,7 +403,7 @@ input:checked + label .description__menus {
   color: white;
   justify-content: center;
   gap: 2rem;
-  padding-inline: 3rem; 
+  padding-inline: 3rem;
 }
 
 .review_container #reviews {
@@ -425,9 +425,9 @@ input:checked + label .description__menus {
 }
 input::placeholder,
 textarea::placeholder {
-  font-family: 'Poppins', sans-serif; 
+  font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
-  color: #cfcbcb; 
+  color: #cfcbcb;
 }
 .review_form #addReviewForm input {
   background-color: #13181d;
@@ -639,13 +639,13 @@ footer p {
   transition: none;
 }
 
-.card__menus[for="c1"] {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-              url('../public/images/foods/food-bg.jpg');
+.card__menus[for='c1'] {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../public/images/foods/food-bg.jpg');
   background-size: cover;
 }
-.card__menus[for="c2"] {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-              url('../public/images/drinks/drink-bg.jpg');
+.card__menus[for='c2'] {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../public/images/drinks/drink-bg.jpg');
   background-size: cover;
 }

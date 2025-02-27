@@ -10,7 +10,4 @@ const createLikedButtonTemplate = () => `
   </button>
 `;
 
-export {
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
-};
+export { createLikeButtonTemplate, createLikedButtonTemplate };
