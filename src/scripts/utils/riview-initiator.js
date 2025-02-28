@@ -40,6 +40,9 @@ const reviewInitiator = {
           const updatedReviews = response.customerReviews;
 
           const reviewContainer = this._reviewContainer;
+          const prevButton = this._reviewContainer.querySelector('button:first-of-type');
+          const nextButton = this._reviewContainer.querySelector('button:last-of-type');
+
           reviewContainer.innerHTML = updatedReviews
             .map(
               (review) => `
@@ -55,6 +58,11 @@ const reviewInitiator = {
             `
             )
             .join('');
+
+          if (prevButton && nextButton) {
+            reviewContainer.appendChild(prevButton);
+            reviewContainer.appendChild(nextButton);
+          }
 
           this._form.reset();
           hideLoading();

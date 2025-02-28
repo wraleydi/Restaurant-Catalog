@@ -104,6 +104,12 @@ const templateDetail = (restaurant) => {
         `
     )
     .join('')}
+    <div class="review_navigation">
+    <button id="prevButton" class="inActive">&#11164; Prev</button>  
+    <button id="nextButton" class="inActive">Next &#11166;</button>
+    </div>
+
+
     </div>
     <div class="review_form">
     <div class="title_form">

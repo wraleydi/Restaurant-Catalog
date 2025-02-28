@@ -3,6 +3,7 @@ import { getDetailRestaurant } from '../../remote/api-data';
 import templateDetail from '../templates/template-detail-restaurant';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 import reviewInitiator from '../../utils/riview-initiator';
+import reviewNavigationInitiator from '../../utils/review-navigation-initiator';
 
 const Detail = {
   async render() {
@@ -44,6 +45,12 @@ const Detail = {
       form: document.querySelector('#addReviewForm'),
       nameInput: document.querySelector('#reviewName'),
       reviewInput: document.querySelector('#reviewText'),
+    });
+
+    reviewNavigationInitiator.init({
+      reviewContainer:document.querySelector('#reviews'),
+      prevButton: document.querySelector('#prevButton'),
+      nextButton: document.querySelector('#nextButton'),
     });
   },
 };
