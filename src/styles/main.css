@@ -137,7 +137,8 @@ textarea {
 .card p,
 .restaurant_info,
 footer p,
-.menu_card p {
+.menu_card p,
+.review_item .review_item__body {
   font-family: Quicksand, sans-serif;
 }
 #menus h4,
@@ -146,7 +147,8 @@ footer p,
 .reviews_restaurant h4,
 .card__menus h4,
 .title_menus h3,
-.review_form #addReviewForm button {
+.review_form #addReviewForm button,
+.review_item .review_item__header {
   font-family: Poppins, sans-serif;
   text-align: center;
 }
@@ -403,12 +405,29 @@ input:checked + label .description__menus {
   color: white;
   justify-content: center;
   gap: 2rem;
-  padding-inline: 3rem;
+  padding: 0 3rem 5rem 3rem ;
 }
 
 .review_container #reviews {
   width: 70%;
-  border: 2px solid #09f;
+}
+.review_item {
+  padding-block: 1rem;
+  border-bottom: 2px solid rgb(102, 101, 98);
+}
+.review_item p {
+  margin-block: 0.5rem;
+}
+.review_item .review_item__header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.review_item .review_item__header .review_name {
+  color: orange;
+}
+.review_item .review_item__header .review_date {
+  font-size: 0.8rem;
 }
 .review_form {
   width: 30%;
@@ -430,7 +449,7 @@ textarea::placeholder {
   color: #cfcbcb;
 }
 .review_form #addReviewForm input {
-  background-color: #13181d;
+  background-color: #292c30;
   border-radius: 5px;
   border: none;
   color: white;
@@ -438,7 +457,7 @@ textarea::placeholder {
 }
 
 .review_form #addReviewForm textarea {
-  background-color: #13181d;
+  background-color: #292c30;
   border-radius: 5px;
   border: none;
   color: white;
@@ -452,6 +471,9 @@ textarea::placeholder {
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
+}
+.review_form #addReviewForm button:hover {
+  background-color: #1e252cf8;
 }
 
 .review_form .title_form {

@@ -43,10 +43,14 @@ const reviewInitiator = {
           reviewContainer.innerHTML = updatedReviews
             .map(
               (review) => `
-              <div class="review">
+              <div class="review_item">
+            <div class="review_item__header">
                 <p class="review_name"><strong>${review.name}</strong></p>
-                <p class="review_text">"${review.review}"</p>
-                <p><em>${review.date}</em></p>
+                <p class="review_date">${review.date}</p>
+            </div>
+            <div class="review_item__body">
+                <p class="review_text" style="margin-block-end: 0;">${review.review}</p>
+            </div>
               </div>
             `
             )
