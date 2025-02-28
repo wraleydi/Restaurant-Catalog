@@ -21,6 +21,8 @@ const Detail = {
     const container = document.querySelector('#restaurant');
     container.innerHTML = templateDetail(restaurant);
 
+    console.log("HTML after rendering:", container.innerHTML);
+
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: {
@@ -45,13 +47,17 @@ const Detail = {
       form: document.querySelector('#addReviewForm'),
       nameInput: document.querySelector('#reviewName'),
       reviewInput: document.querySelector('#reviewText'),
+      updateReviews: reviewNavigationInitiator.updateReviews.bind(reviewNavigationInitiator),
     });
 
-    reviewNavigationInitiator.init({
-      reviewContainer:document.querySelector('#reviews'),
-      prevButton: document.querySelector('#prevButton'),
-      nextButton: document.querySelector('#nextButton'),
-    });
+    console.log("Before reviewNavigationInitiator.init()");
+reviewNavigationInitiator.init({
+  reviewContainer: document.querySelector('#reviews'),
+  prevButton: document.querySelector('#prevButton'),
+  nextButton: document.querySelector('#nextButton'),
+});
+console.log("After reviewNavigationInitiator.init()");
+
   },
 };
 

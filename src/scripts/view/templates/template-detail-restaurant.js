@@ -88,6 +88,7 @@ const templateDetail = (restaurant) => {
     <h4 style="margin-block-start: 0;">Reviews Restaurant</h4>
     </div>
     <div class="review_container">
+    <div class="review_content">
     <div id="reviews">
         ${restaurant.customerReviews
     .map(
@@ -104,13 +105,13 @@ const templateDetail = (restaurant) => {
         `
     )
     .join('')}
+    </div>
     <div class="review_navigation">
-    <button id="prevButton" class="inActive">&#11164; Prev</button>  
-    <button id="nextButton" class="inActive">Next &#11166;</button>
+    <button id="prevButton">&#11164; Prev</button>  
+    <button id="nextButton">Next &#11166;</button>
+    </div>
     </div>
 
-
-    </div>
     <div class="review_form">
     <div class="title_form">
     <h4 style="margin: 0;">Add Review</h4>

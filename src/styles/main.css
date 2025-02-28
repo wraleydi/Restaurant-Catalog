@@ -409,7 +409,7 @@ input:checked + label .description__menus {
   padding: 0 3rem 5rem 3rem ;
 }
 
-.review_container #reviews {
+.review_container .review_content {
   width: 70%;
 }
 .review_item {
@@ -450,7 +450,7 @@ input:checked + label .description__menus {
   font-family: Poppins;
   font-weight: bold;
   color: #292c30;
-  cursor: pointer;
+  cursor: no-drop;
 }
 .review_form {
   width: 30%;
