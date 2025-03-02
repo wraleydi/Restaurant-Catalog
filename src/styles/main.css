@@ -134,7 +134,6 @@ textarea {
   font-weight: 500;
 }
 
-#menus ul li,
 .card p,
 .restaurant_info,
 footer p,
@@ -142,8 +141,6 @@ footer p,
 .review_item .review_item__body {
   font-family: Quicksand, sans-serif;
 }
-#menus h4,
-.menus h3,
 .message_text,
 .reviews_restaurant h4,
 .card__menus h4,
@@ -213,11 +210,6 @@ footer p,
 .restaurant {
   background-color: #13181d;
 }
-.detail_restaurant {
-  background-color: #13181d;
-  color: #fff;
-  padding: 9rem 6rem;
-}
 .restaurant_info__content {
   max-width: 1300px;
   padding: 0 3rem;
@@ -248,14 +240,12 @@ footer p,
   gap: 10px;
   max-width: 700px;
   margin-block-start: 3rem;
+  align-items: start;
 }
 
 .info_wrapper {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 10px;
-  align-items: center;
-  border-radius: 0.5rem;
+  border-radius: 5px;
   background: #ff8000;
   box-shadow:
     inset 15px 15px 19px #b85c00,
@@ -277,25 +267,19 @@ footer p,
 }
 .menus {
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: Poppins, sans-serif;
   background-color: #13181d;
   margin-block: 5rem;
+  padding-inline: 2rem;
 }
 .restaurant_menus {
   height: 480px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: start;
-}
-.menus h3 {
-  margin: 2rem 0 6rem 0;
-  font-size: 2.4rem;
-  background-color: #13181d;
-  color: orange;
 }
 .card__menus {
   position: relative;
@@ -329,7 +313,7 @@ footer p,
 .card__menus > .row > .description__menus {
   max-height: 350px;
   flex-direction: column;
-  width: 1100px;
+  width: 1000px;
   opacity: 0;
   transform: translateX(200px);
   transition-delay: 1.2s;
@@ -354,7 +338,7 @@ footer p,
 .menu_card {
   display: flex;
   background-color: orange;
-  border-radius: 0.5rem;
+  border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   align-items: start;
   height: auto;
@@ -376,7 +360,7 @@ footer p,
 }
 
 input:checked + label {
-  width: 1100px;
+  width: 1000px;
 }
 
 input:checked + label .description__menus {
@@ -443,7 +427,11 @@ input:checked + label .description__menus {
   color: #292c30;
   cursor: pointer;
 }
+.review_navigation .active:hover {
+  opacity: 0.5;
+}
 .review_navigation .inActive {
+  background-color: #e9e9ed;
   border: none;
   width: 60px;
   border-radius: 5px;
@@ -513,22 +501,12 @@ footer p {
   background-color: #13181dfa;
 }
 
-@media (max-width: 910px) {
-  .info_image img {
-    width: 250px;
+@media (max-width: 1150px) {
+  .card__menus > .row > .description__menus {
+    width: 800px;
   }
-  .info_description {
-    font-size: 0.9rem;
-  }
-  .detail_restaurant {
-    padding-inline: 2rem;
-  }
-  .restaurant_menus {
-    flex-direction: column;
-  }
-  .review_form #reviews {
-    grid-template-columns: repeat(1, 1fr);
-    width: 400px;
+  input:checked + label {
+    width: 800px;
   }
 }
 @media (max-width: 790px) {
@@ -571,11 +549,17 @@ footer p {
   .catalog-section {
     padding: 2rem;
   }
-  .detail_restaurant {
-    padding-inline: 2rem;
-  }
   .review_form #reviews {
     width: 250px;
+  }
+  .restaurant_info__content .title_content {
+    font-size: 1.4rem;
+  }
+  .restaurant_info__content .info_description {
+    font-size: 1rem;
+  }
+  .location_restaurant {
+    flex-direction: column;
   }
 }
 @media (max-width: 520px) {
@@ -586,23 +570,24 @@ footer p {
   .review_form #reviews {
     margin: 6rem 0;
   }
+  .restaurant_info__content {
+    padding: 0 2rem;
+  }
+  .catalog-section {
+    padding: 6rem 1rem 9rem 1rem;
+  }
+}
+
+@media (max-width: 610px) {
+  #container-item {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    gap: 0.5rem;
+  }
 }
 
 @media (max-width: 450px) {
   .hero-text {
     padding: 1rem;
-  }
-  .info_image img {
-    width: 180px;
-  }
-  .info_description p {
-    font-size: 0.7rem;
-  }
-  #menus ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0;
-    justify-content: center;
   }
   .catalog-section {
     padding: 6rem 0.5rem 9rem 0.5rem;
@@ -610,6 +595,13 @@ footer p {
   #container-item {
     grid-template-columns: repeat(2, minmax(140px, 1fr));
     gap: 0.5rem;
+  }
+  .restaurant_info__content {
+    padding: 0 1.2rem;
+  }
+  .info_wrapper {
+    font-size: 0.9rem;
+    padding: 5px;
   }
   .card__content {
     padding: 0.5rem;

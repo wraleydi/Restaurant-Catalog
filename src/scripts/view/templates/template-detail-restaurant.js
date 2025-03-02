@@ -22,12 +22,10 @@ const templateDetail = (restaurant) => {
         </div>
         <div class="location_restaurant">
     <div class="info_wrapper">
-        <p>🏢</p>
-        <span><strong>City:</strong> ${restaurant.city}</span>
+        <span>🏢 <strong>City:</strong> ${restaurant.city}</span>
     </div>
     <div class="info_wrapper">
-        <p>📍</p>
-        <span><strong>Address:</strong> ${restaurant.address}</span>
+        <span>📍 <strong>Address:</strong> ${restaurant.address}</span>
     </div>
 </div>
         </div>
