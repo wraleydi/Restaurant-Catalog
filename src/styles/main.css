@@ -26,6 +26,8 @@ textarea {
 }
 .hero-section {
   position: relative;
+  display: flex;
+  justify-content: center;
   align-items: center;
   height: 90vh;
   overflow: hidden;
@@ -75,22 +77,44 @@ textarea {
   padding-block-end: 9rem;
   background-color: #13181d;
 }
-.hero-section,
 .title-catalog {
-  justify-content: center;
   display: flex;
-}
-.title-catalog {
+  font-size: 1.8rem;
   align-items: center;
   color: #fff;
-  text-align: center;
-  font-size: 1.8rem;
+}
+.header-catalog {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding-inline: 4rem;
+}
+.header-catalog .search_bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.header-catalog .search_bar input {
+  padding: 0.5rem;
+  background-color: transparent;
+  color: white;
+  border-radius: 5px;
+}
+.header-catalog .search_bar input:focus {
+  border-color: orange;
+  outline: 1px solid orange;
+}
+.header-catalog .search_bar span {
+  color: orange;
+  font-size: 38px;
+  transform: scaleX(-1);
+  display: inline-block;
 }
 #container-item {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
-  padding-block-start: 3rem;
+  padding-block-start: 1rem;
 }
 #container-item .card {
   background-color: orange;

@@ -5,9 +5,15 @@ const Favorite = {
   async render() {
     return `
         <div class="catalog-section">
+          <div class="header-catalog">
           <div class="title-catalog">
             <img src="./images/icons/storefront.png" alt="storefront" class="material-symbols-outlined" />
-            <h2>Your Favorite Restaurant</h2>
+            <h2>Favorite Restaurant</h2>
+          </div>
+            <div class="search_bar">
+            <span>🔍</span>
+            <input type="text" id="search_element" placeholder="search restaurant..." required>
+            </div>
           </div>
           <h3 class="message_text">*No Favorite Restaurant</h3>
           <div id="container-item"></div>

@@ -22,7 +22,7 @@ const getDetailRestaurant = async (id) => {
   }
 };
 
-async function addReviewRestaurant(newReview) {
+const addReviewRestaurant = async (newReview) => {
   try {
     const response = await fetch(`${BASE_URL}/review`, {
       method: 'POST',
@@ -45,6 +45,17 @@ async function addReviewRestaurant(newReview) {
     console.error('Error submitting review:', error);
     throw error;
   }
-}
+};
 
-export { getListRestaurant, getDetailRestaurant, addReviewRestaurant };
+const getSearchRestaurant = async (query) => {
+  try {
+    const response = await fetch(`${BASE_URL}/search?q=${encodeURIComponent(query)}`);
+    const data = await response.json();
+    return data.restaurants;
+  } catch (error) {
+    alert(error.message) ;
+    throw error;
+  }
+};
+
+export { getListRestaurant, getDetailRestaurant, addReviewRestaurant, getSearchRestaurant };
