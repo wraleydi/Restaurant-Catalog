@@ -1,5 +1,5 @@
-import getRandomPrice from '../../utils/random-price-menus';
-import getRandomImage from '../../utils/random-image-menus';
+import getRandomPrice from '../../../public/data/random-price-menus';
+import getRandomImage from '../../../public/data/random-image-menus';
 
 const templateDetail = (restaurant) => {
   const imgApi = `https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}`;

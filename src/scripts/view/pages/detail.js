@@ -9,6 +9,7 @@ const Detail = {
   async render() {
     return `
         <div id="restaurant" class="restaurant"></div>
+        <div id="alertContainer"></div>
       <div id="likeButtonContainer"></div>
         `;
   },
@@ -44,6 +45,7 @@ const Detail = {
 
     reviewInitiator.init({
       reviewContainer: document.querySelector('#reviews'),
+      alertContainer: document.querySelector('#alertContainer'),
       form: document.querySelector('#addReviewForm'),
       nameInput: document.querySelector('#reviewName'),
       reviewInput: document.querySelector('#reviewText'),

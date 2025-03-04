@@ -1,10 +1,12 @@
 import { addReviewRestaurant, getDetailRestaurant } from '../remote/api-data';
 import UrlParser from '../routes/url-parser';
 import { showLoading, hideLoading } from './indikator-loading';
+import { templateAlertSucces, templateAlertErrorData, templateAlertErrorMain } from '../view/templates/template-alert-review';
 
 const reviewInitiator = {
-  async init({ reviewContainer, form, nameInput, reviewInput, updateReviews }) {
+  async init({ reviewContainer, alertContainer, form, nameInput, reviewInput, updateReviews }) {
     this._reviewContainer = reviewContainer;
+    this._alertContainer = alertContainer;
     this._form = form;
     this._nameInput = nameInput;
     this._reviewInput = reviewInput;
@@ -46,7 +48,7 @@ const reviewInitiator = {
 
           this._form.reset();
           hideLoading();
-          alert('Ulasan berhasil ditambahkan!');
+          this._alertContainer.innerHTML = templateAlertSucces();
         } else {
           throw new Error('Data ulasan tidak valid');
         }
