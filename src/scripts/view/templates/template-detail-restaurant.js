@@ -35,7 +35,7 @@ const templateDetail = (restaurant) => {
         <input type="radio" name="slide" id="c1" checked>
         <label for="c1" class="card__menus">
             <div class="icon">></div>
-            <div class="row">
+            <div class="wrapper_menus">
               <h4>Foods Menus</h4>
                 <div class="description__menus">
                 ${restaurant.menus.foods
@@ -58,7 +58,7 @@ const templateDetail = (restaurant) => {
         <input type="radio" name="slide" id="c2">
         <label for="c2" class="card__menus">
             <div class="icon">></div>
-            <div class="row">
+            <div class="wrapper_menus">
               <h4>Drinks Menus</h4>
                 <div class="description__menus">
                 ${restaurant.menus.drinks

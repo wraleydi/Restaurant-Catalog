@@ -50,11 +50,11 @@ const reviewInitiator = {
           hideLoading();
           this._alertContainer.innerHTML = templateAlertSucces();
         } else {
-          throw new Error('Data ulasan tidak valid');
+          this._alertContainer.innerHTML = templateAlertErrorData();
         }
       } catch (error) {
         console.error('Failed to submit review:', error);
-        alert('Gagal mengirim ulasan. Coba lagi nanti.');
+        this._alertContainer.innerHTML = templateAlertErrorMain();
       } finally {
         hideLoading();
       }

@@ -16,7 +16,7 @@ const templateItemRestaurant = (restaurant) => {
     <a href="/#/detail/${restaurant.id}" >
     <div class="card__content">
       <h2 class="title_restaurant">${restaurant.name}</h2>
-          <p style="font-weight: 600; margin-block-start: 0;"><strong>🗺️ </strong> ${restaurant.city}</p>
+          <p style="font-weight: 600; margin-block: 0 0.5rem;"><strong>🗺️ </strong> ${restaurant.city}</p>
           <p style="margin: 0;">${restaurant.description}</p>
         </div>
     </a>

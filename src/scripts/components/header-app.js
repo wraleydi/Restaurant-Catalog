@@ -11,7 +11,7 @@ class HeaderApp extends HTMLElement {
     this.innerHTML = `
     <style>
      header {
-    position: sticky;
+    position: sticky !important;
     top: 0;
     z-index: 9999;
   }
@@ -26,19 +26,20 @@ class HeaderApp extends HTMLElement {
 
 .my-header .title-app a{
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
   padding: 0.5rem 1rem ;
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, sans-serif !important;
   text-decoration: none;
 }
 
-.navbar ul {
-  display: flex;
-  list-style: none;
+.my-navbar ul {
+  display: flex !important;
+  list-style: none !important;
+  align-items: center;
 }
 
-.navbar ul li a {
-display: inline-block;
+.my-navbar ul li a {
+display: inline-block !important;
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
@@ -48,7 +49,7 @@ display: inline-block;
   border-bottom: 2px solid transparent;
 }
 
-.navbar ul li a:hover {
+.my-navbar ul li a:hover {
   color: orange;
   border-bottom: 2px solid orange;
 }
@@ -93,7 +94,7 @@ display: inline-block;
           </h2>
         </a>
         </div>
-        <div class="navbar">
+        <div class="my-navbar">
           <nav
             id="navDrawer"
             role="navigation"
@@ -110,7 +111,7 @@ display: inline-block;
             >
               ☰
             </div>
-            <ul class="navbar-menu" id="navbar-menu" style="margin: 0;" hidden>
+            <ul class="my-navbar-menu" id="navbar-menu" style="margin: 0;" hidden>
               <li><a href="#/home" tabindex="0">Home</a></li>
               <li><a href="#/favorite" tabindex="0">Favorite</a></li>
               <li>
@@ -126,13 +127,13 @@ display: inline-block;
 
     toggleMenu.addEventListener('click', () => {
       console.log('Toggle menu diklik!');
-      document.querySelector('.navbar-menu').classList.toggle('navbar-expand');
+      document.querySelector('.my-navbar-menu').classList.toggle('navbar-expand');
 
       toggleMenu.classList.toggle('remove-menu');
     });
 
     window.onscroll = function () {
-      document.querySelector('.navbar-menu').classList.remove('navbar-expand');
+      document.querySelector('.my-navbar-menu').classList.remove('navbar-expand');
     };
 
     toggleMenu.addEventListener('keydown', (event) => {
