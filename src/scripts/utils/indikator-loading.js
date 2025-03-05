@@ -2,7 +2,7 @@ const loading = document.getElementById('loading');
 const overlay = document.getElementById('overlay');
 
 const showLoading = () => {
-  loading.style.display = 'block';
+  loading.style.display = 'flex';
   overlay.style.display = 'block';
 };
 

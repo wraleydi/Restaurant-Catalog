@@ -208,24 +208,20 @@ footer p,
   z-index: 1;
 }
 #loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3rem;
   color: #918d8d;
   z-index: 9999;
 }
-.spinner {
-  margin-inline: auto;
-  border: 6px solid rgba(0, 0, 0, 0.1);
-  width: 66px;
-  height: 66px;
-  border-radius: 50%;
-  border-left-color: #09f;
-  animation: 1s ease-out infinite spin;
-}
 .text-loading {
   margin-block-start: 1rem;
+  font-size: 3rem;
+  font-family: Poppins, sans-serif;
 }
 @keyframes spin {
   0% {
