@@ -114,11 +114,21 @@ const templateDetail = (restaurant) => {
     <div class="title_form">
     <h4 style="margin: 0;">Add Review</h4>
     </div>
-    <form id="addReviewForm">
-        <input type="text" id="reviewName" placeholder="Your Name" required />
-        <textarea id="reviewText" placeholder="Your Review" required></textarea>
-        <button type="submit"> Save </button>
-    </form>
+    <form id="addReviewForm" novalidate>
+    <div class="input_name__review">
+    <input type="text" class="form-control" id="reviewName" placeholder="Your Name" required />
+    <div class="invalid-feedback">
+        Please enter your name.
+    </div>
+    </div>
+    <div class="input_review__review">
+    <textarea id="reviewText" class="form-control" placeholder="Your Review" required></textarea>
+    <div class="invalid-feedback">
+        Please enter your review.
+    </div>
+    </div>
+    <button type="submit">Save</button>
+</form>
     </div>
     </div>
 </div>

@@ -22,10 +22,18 @@ const reviewInitiator = {
       const name = this._nameInput.value.trim();
       const review = this._reviewInput.value.trim();
 
-      if (!name || !review) {
-        alert('Nama dan review tidak boleh kosong!');
-        return;
+      const form = event.target;
+
+      if (form.checkValidity()) {
+          console.log("Form valid!");
+      } else {
+          console.warn("Form invalid!");
+          form.classList.add("was-validated");
+          event.stopPropagation();
+          return;
       }
+
+      form.classList.add("was-validated");
 
       const url = UrlParser.parseActiveUrlWithoutCombiner();
       const restaurant = await getDetailRestaurant(url.id);
@@ -47,6 +55,7 @@ const reviewInitiator = {
           this._updateReviews(latestReview);
 
           this._form.reset();
+          form.classList.remove('was-validated');
           hideLoading();
           this._alertContainer.innerHTML = templateAlertSucces();
         } else {

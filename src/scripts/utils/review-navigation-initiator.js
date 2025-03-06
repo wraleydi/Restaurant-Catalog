@@ -8,7 +8,7 @@ const reviewNavigationInitiator = {
     this._prevButton = prevButton;
     this._nextButton = nextButton;
     this._index = 0;
-    this._itemsPerPages = 5;
+    this._itemsPerPages = 4;
 
     await this._initNavigation();
     this._prevHandler();
