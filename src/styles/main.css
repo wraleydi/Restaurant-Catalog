@@ -7,7 +7,19 @@
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   -webkit-focus-ring-color: rgba(255, 255, 255, 0);
 }
-body, h1, h2, h3, h4, h5, h6, p, span, button, img, .card, :root {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+button,
+img,
+.card,
+:root {
   all: revert;
 }
 body {
@@ -65,7 +77,7 @@ textarea {
   font-family: Poppins, sans-serif;
 }
 .hero-image::before {
-  content: '';
+  content: "";
   background-color: #13181d69;
   z-index: 1;
 }
@@ -414,7 +426,7 @@ input:checked + label .description__menus {
   color: white;
   justify-content: center;
   gap: 2rem;
-  padding: 0 3rem 5rem 3rem ;
+  padding: 0 3rem 5rem 3rem;
 }
 
 .review_container .review_content {
@@ -479,7 +491,7 @@ input:checked + label .description__menus {
 }
 input::placeholder,
 textarea::placeholder {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 0.9rem;
   color: #cfcbcb;
 }
@@ -520,7 +532,6 @@ textarea::placeholder {
   width: 20px;
   height: 20px;
 }
-
 
 footer p {
   margin: 0;
@@ -705,13 +716,13 @@ footer p {
   transition: none;
 }
 
-.card__menus[for='c1'] {
+.card__menus[for="c1"] {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('../public/images/foods/food-bg.jpg');
+    url("../public/images/foods/food-bg.jpg");
   background-size: cover;
 }
-.card__menus[for='c2'] {
+.card__menus[for="c2"] {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('../public/images/drinks/drink-bg.jpg');
+    url("../public/images/drinks/drink-bg.jpg");
   background-size: cover;
 }

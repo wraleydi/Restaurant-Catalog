@@ -1,4 +1,4 @@
-const BASE_URL = 'https://restaurant-api.dicoding.dev';
+const BASE_URL = "https://restaurant-api.dicoding.dev";
 
 const getListRestaurant = async () => {
   try {
@@ -6,7 +6,7 @@ const getListRestaurant = async () => {
     const data = await response.json();
     return data.restaurants;
   } catch (error) {
-    console.error('Error:', error.message);
+    console.error("Error:", error.message);
     throw error;
   }
 };
@@ -17,7 +17,7 @@ const getDetailRestaurant = async (id) => {
     const data = await response.json();
     return data.restaurant;
   } catch (error) {
-    console.error('Error fetching restaurant details:', error.message);
+    console.error("Error fetching restaurant details:", error.message);
     throw error;
   }
 };
@@ -25,16 +25,16 @@ const getDetailRestaurant = async (id) => {
 const addReviewRestaurant = async (newReview) => {
   try {
     const response = await fetch(`${BASE_URL}/review`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(newReview),
     });
 
     if (!response.ok) {
       const errorDetails = await response.text();
-      console.error('Error response:', errorDetails);
+      console.error("Error response:", errorDetails);
       throw new Error(`Failed to submit review: ${response.statusText}`);
     }
 
@@ -42,20 +42,27 @@ const addReviewRestaurant = async (newReview) => {
 
     return data;
   } catch (error) {
-    console.error('Error submitting review:', error);
+    console.error("Error submitting review:", error);
     throw error;
   }
 };
 
 const getSearchRestaurant = async (query) => {
   try {
-    const response = await fetch(`${BASE_URL}/search?q=${encodeURIComponent(query)}`);
+    const response = await fetch(
+      `${BASE_URL}/search?q=${encodeURIComponent(query)}`
+    );
     const data = await response.json();
     return data.restaurants;
   } catch (error) {
-    alert(error.message) ;
+    alert(error.message);
     throw error;
   }
 };
 
-export { getListRestaurant, getDetailRestaurant, addReviewRestaurant, getSearchRestaurant };
+export {
+  getListRestaurant,
+  getDetailRestaurant,
+  addReviewRestaurant,
+  getSearchRestaurant,
+};

@@ -1,5 +1,5 @@
-import UrlParser from '../routes/url-parser';
-import routes from '../routes/routes';
+import UrlParser from "../routes/url-parser";
+import routes from "../routes/routes";
 
 class App {
   constructor({ button, drawer, content }) {
@@ -10,29 +10,29 @@ class App {
 
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
-    console.log('Parsed URL:', url);
+    console.log("Parsed URL:", url);
 
     const page = routes[url];
     if (!page) {
-      console.error('Route not found for URL:', url);
+      console.error("Route not found for URL:", url);
       return;
     }
 
-    const heroSection = document.querySelector('#hero-section');
+    const heroSection = document.querySelector("#hero-section");
     if (heroSection) {
-      if (url !== '/' && url !== '/home') {
-        heroSection.style.display = 'none';
+      if (url !== "/" && url !== "/home") {
+        heroSection.style.display = "none";
       } else {
-        heroSection.style.display = 'block';
+        heroSection.style.display = "block";
       }
     }
 
     this._content.innerHTML = await page.render();
     await page.afterRender();
-    const skipLinkElem = document.querySelector('.skip-link');
-    skipLinkElem.addEventListener('click', (event) => {
+    const skipLinkElem = document.querySelector(".skip-link");
+    skipLinkElem.addEventListener("click", (event) => {
       event.preventDefault();
-      document.querySelector('#main-content').scrollIntoView();
+      document.querySelector("#main-content").scrollIntoView();
       skipLinkElem.blur();
     });
   }

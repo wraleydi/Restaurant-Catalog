@@ -1,5 +1,5 @@
-import getRandomPrice from '../../../public/data/random-price-menus';
-import getRandomImage from '../../../public/data/random-image-menus';
+import getRandomPrice from "../../../public/data/random-price-menus";
+import getRandomImage from "../../../public/data/random-image-menus";
 
 const templateDetail = (restaurant) => {
   const imgApi = `https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}`;
@@ -39,18 +39,18 @@ const templateDetail = (restaurant) => {
               <h4>Foods Menus</h4>
                 <div class="description__menus">
                 ${restaurant.menus.foods
-    .map(
-      (food) => `
+                  .map(
+                    (food) => `
                     <div class="menu_card">
-                            <img src="${getRandomImage('food')}" alt="${food.name}" height="70px">
+                            <img src="${getRandomImage("food")}" alt="${food.name}" height="70px">
                             <div class="menu_description">
                             <p>${food.name}</p>
-                            <p>💵Rp ${getRandomPrice().toLocaleString('id-ID')}
+                            <p>💵Rp ${getRandomPrice().toLocaleString("id-ID")}
                             </div>
                     </div>
                 `
-    )
-    .join('')}
+                  )
+                  .join("")}
                 </div>
             </div>
         </label>
@@ -62,20 +62,20 @@ const templateDetail = (restaurant) => {
               <h4>Drinks Menus</h4>
                 <div class="description__menus">
                 ${restaurant.menus.drinks
-    .map(
-      (drink) => `
+                  .map(
+                    (drink) => `
                                   <div class="menu_card">
-                                          <img src="${getRandomImage('drink')}" alt="${drink.name}" height="70px">
+                                          <img src="${getRandomImage("drink")}" alt="${drink.name}" height="70px">
                                       <div class="menu_name">
                                       <div class="menu_description">
                                           <p>${drink.name}</p>
-                                          <p>💵Rp ${getRandomPrice().toLocaleString('id-ID')}
+                                          <p>💵Rp ${getRandomPrice().toLocaleString("id-ID")}
                                         </div>
                                       </div>
                                   </div>
                               `
-    )
-    .join('')}
+                  )
+                  .join("")}
                 </div>
             </div>
         </label>
@@ -89,8 +89,8 @@ const templateDetail = (restaurant) => {
     <div class="review_content">
     <div id="reviews">
         ${restaurant.customerReviews
-    .map(
-      (review) => `
+          .map(
+            (review) => `
             <div class="review_item">
             <div class="review_item__header">
                 <p class="review_name"><strong>${review.name}</strong></p>
@@ -101,8 +101,8 @@ const templateDetail = (restaurant) => {
             </div>
               </div>
         `
-    )
-    .join('')}
+          )
+          .join("")}
     </div>
     <div class="review_navigation">
     <button id="prevButton">&#11164; Prev</button>  

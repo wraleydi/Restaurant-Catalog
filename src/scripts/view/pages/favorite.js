@@ -1,5 +1,5 @@
-import FavoriteRestaurant from '../../../public/data/favorite-restaurant-idb';
-import templateItemRestaurant from '../templates/template-item-restaurant';
+import FavoriteRestaurant from "../../../public/data/favorite-restaurant-idb";
+import templateItemRestaurant from "../templates/template-item-restaurant";
 
 const Favorite = {
   async render() {
@@ -23,13 +23,13 @@ const Favorite = {
 
   async afterRender() {
     const restaurants = await FavoriteRestaurant.getRestaurantsAll();
-    const restaurantsContainer = document.querySelector('#container-item');
-    const messageText = document.querySelector('.message_text');
+    const restaurantsContainer = document.querySelector("#container-item");
+    const messageText = document.querySelector(".message_text");
 
     if (restaurants.length === 0) {
-      messageText.style.display = 'block';
+      messageText.style.display = "block";
     } else {
-      messageText.style.display = 'none';
+      messageText.style.display = "none";
       restaurants.forEach((restaurant) => {
         restaurantsContainer.innerHTML += templateItemRestaurant(restaurant);
       });

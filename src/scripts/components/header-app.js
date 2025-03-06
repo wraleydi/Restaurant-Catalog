@@ -123,21 +123,25 @@ display: inline-block !important;
       </div>
         `;
 
-    const toggleMenu = document.querySelector('.toggle-menu');
+    const toggleMenu = document.querySelector(".toggle-menu");
 
-    toggleMenu.addEventListener('click', () => {
-      console.log('Toggle menu diklik!');
-      document.querySelector('.my-navbar-menu').classList.toggle('navbar-expand');
+    toggleMenu.addEventListener("click", () => {
+      console.log("Toggle menu diklik!");
+      document
+        .querySelector(".my-navbar-menu")
+        .classList.toggle("navbar-expand");
 
-      toggleMenu.classList.toggle('remove-menu');
+      toggleMenu.classList.toggle("remove-menu");
     });
 
     window.onscroll = function () {
-      document.querySelector('.my-navbar-menu').classList.remove('navbar-expand');
+      document
+        .querySelector(".my-navbar-menu")
+        .classList.remove("navbar-expand");
     };
 
-    toggleMenu.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
+    toggleMenu.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
         toggleMenu.click();
       }
@@ -145,4 +149,4 @@ display: inline-block !important;
   }
 }
 
-customElements.define('header-app', HeaderApp);
+customElements.define("header-app", HeaderApp);

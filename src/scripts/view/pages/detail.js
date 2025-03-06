@@ -1,9 +1,9 @@
-import UrlParser from '../../routes/url-parser';
-import { getDetailRestaurant } from '../../remote/api-data';
-import templateDetail from '../templates/template-detail-restaurant';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
-import reviewInitiator from '../../utils/riview-initiator';
-import reviewNavigationInitiator from '../../utils/review-navigation-initiator';
+import UrlParser from "../../routes/url-parser";
+import { getDetailRestaurant } from "../../remote/api-data";
+import templateDetail from "../templates/template-detail-restaurant";
+import LikeButtonInitiator from "../../utils/like-button-initiator";
+import reviewInitiator from "../../utils/riview-initiator";
+import reviewNavigationInitiator from "../../utils/review-navigation-initiator";
 
 const Detail = {
   async render() {
@@ -16,16 +16,16 @@ const Detail = {
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    console.log('Parsed ID:', url.id);
+    console.log("Parsed ID:", url.id);
     const restaurant = await getDetailRestaurant(url.id);
-    console.log('Fetched Restaurant:', restaurant);
-    const container = document.querySelector('#restaurant');
+    console.log("Fetched Restaurant:", restaurant);
+    const container = document.querySelector("#restaurant");
     container.innerHTML = templateDetail(restaurant);
 
-    console.log('HTML after rendering:', container.innerHTML);
+    console.log("HTML after rendering:", container.innerHTML);
 
     LikeButtonInitiator.init({
-      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      likeButtonContainer: document.querySelector("#likeButtonContainer"),
       restaurant: {
         id: restaurant.id,
         name: restaurant.name,
@@ -44,22 +44,23 @@ const Detail = {
     });
 
     reviewInitiator.init({
-      reviewContainer: document.querySelector('#reviews'),
-      alertContainer: document.querySelector('#alertContainer'),
-      form: document.querySelector('#addReviewForm'),
-      nameInput: document.querySelector('#reviewName'),
-      reviewInput: document.querySelector('#reviewText'),
-      updateReviews: reviewNavigationInitiator.updateReviews.bind(reviewNavigationInitiator),
+      reviewContainer: document.querySelector("#reviews"),
+      alertContainer: document.querySelector("#alertContainer"),
+      form: document.querySelector("#addReviewForm"),
+      nameInput: document.querySelector("#reviewName"),
+      reviewInput: document.querySelector("#reviewText"),
+      updateReviews: reviewNavigationInitiator.updateReviews.bind(
+        reviewNavigationInitiator
+      ),
     });
 
-    console.log('Before reviewNavigationInitiator.init()');
+    console.log("Before reviewNavigationInitiator.init()");
     reviewNavigationInitiator.init({
-      reviewContainer: document.querySelector('#reviews'),
-      prevButton: document.querySelector('#prevButton'),
-      nextButton: document.querySelector('#nextButton'),
+      reviewContainer: document.querySelector("#reviews"),
+      prevButton: document.querySelector("#prevButton"),
+      nextButton: document.querySelector("#nextButton"),
     });
-    console.log('After reviewNavigationInitiator.init()');
-
+    console.log("After reviewNavigationInitiator.init()");
   },
 };
 

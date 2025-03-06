@@ -1,3 +1,3 @@
-import './header-app';
-import './footer-app';
-import './cta-section';
+import "./header-app";
+import "./footer-app";
+import "./cta-section";

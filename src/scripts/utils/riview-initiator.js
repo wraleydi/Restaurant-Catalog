@@ -1,10 +1,21 @@
-import { addReviewRestaurant, getDetailRestaurant } from '../remote/api-data';
-import UrlParser from '../routes/url-parser';
-import { showLoading, hideLoading } from './indikator-loading';
-import { templateAlertSucces, templateAlertErrorData, templateAlertErrorMain } from '../view/templates/template-alert-review';
+import { addReviewRestaurant, getDetailRestaurant } from "../remote/api-data";
+import UrlParser from "../routes/url-parser";
+import { showLoading, hideLoading } from "./indikator-loading";
+import {
+  templateAlertSucces,
+  templateAlertErrorData,
+  templateAlertErrorMain,
+} from "../view/templates/template-alert-review";
 
 const reviewInitiator = {
-  async init({ reviewContainer, alertContainer, form, nameInput, reviewInput, updateReviews }) {
+  async init({
+    reviewContainer,
+    alertContainer,
+    form,
+    nameInput,
+    reviewInput,
+    updateReviews,
+  }) {
     this._reviewContainer = reviewContainer;
     this._alertContainer = alertContainer;
     this._form = form;
@@ -16,7 +27,7 @@ const reviewInitiator = {
   },
 
   _addSubmitListener() {
-    this._form.addEventListener('submit', async (event) => {
+    this._form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       const name = this._nameInput.value.trim();
@@ -25,12 +36,12 @@ const reviewInitiator = {
       const form = event.target;
 
       if (form.checkValidity()) {
-          console.log("Form valid!");
+        console.log("Form valid!");
       } else {
-          console.warn("Form invalid!");
-          form.classList.add("was-validated");
-          event.stopPropagation();
-          return;
+        console.warn("Form invalid!");
+        form.classList.add("was-validated");
+        event.stopPropagation();
+        return;
       }
 
       form.classList.add("was-validated");
@@ -50,19 +61,20 @@ const reviewInitiator = {
         const response = await addReviewRestaurant(newReview);
 
         if (response.customerReviews) {
-          const latestReview = response.customerReviews[response.customerReviews.length - 1];
+          const latestReview =
+            response.customerReviews[response.customerReviews.length - 1];
 
           this._updateReviews(latestReview);
 
           this._form.reset();
-          form.classList.remove('was-validated');
+          form.classList.remove("was-validated");
           hideLoading();
           this._alertContainer.innerHTML = templateAlertSucces();
         } else {
           this._alertContainer.innerHTML = templateAlertErrorData();
         }
       } catch (error) {
-        console.error('Failed to submit review:', error);
+        console.error("Failed to submit review:", error);
         this._alertContainer.innerHTML = templateAlertErrorMain();
       } finally {
         hideLoading();

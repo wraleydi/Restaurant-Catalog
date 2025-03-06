@@ -1,5 +1,5 @@
-import { getListRestaurant } from '../../remote/api-data';
-import templateItemRestaurant from '../templates/template-item-restaurant';
+import { getListRestaurant } from "../../remote/api-data";
+import templateItemRestaurant from "../templates/template-item-restaurant";
 
 const Home = {
   async render() {
@@ -24,7 +24,7 @@ const Home = {
   async afterRender() {
     const restaurants = await getListRestaurant();
     console.log(restaurants);
-    const container = document.querySelector('#container-item');
+    const container = document.querySelector("#container-item");
     restaurants.forEach((restaurant) => {
       container.innerHTML += templateItemRestaurant(restaurant);
     });

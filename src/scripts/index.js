@@ -1,18 +1,18 @@
-import 'regenerator-runtime';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/main.css';
-import './components/components.js';
-import App from './view/app.js';
-import { showLoading, hideLoading } from './utils/indikator-loading.js';
-import swRegister from './utils/sw-register.js';
+import "regenerator-runtime";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/main.css";
+import "./components/components.js";
+import App from "./view/app.js";
+import { showLoading, hideLoading } from "./utils/indikator-loading.js";
+import swRegister from "./utils/sw-register.js";
 
 const app = new App({
-  button: document.querySelector('#toggleMenu'),
-  drawer: document.querySelector('#navDrawer'),
-  content: document.querySelector('#main-content'),
+  button: document.querySelector("#toggleMenu"),
+  drawer: document.querySelector("#navDrawer"),
+  content: document.querySelector("#main-content"),
 });
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener("DOMContentLoaded", () => {
   swRegister();
   showLoading();
 
@@ -22,13 +22,13 @@ window.addEventListener('DOMContentLoaded', () => {
       hideLoading();
     })
     .catch((error) => {
-      alert('Terjadi kesalahan saat memuat halaman. Silakan coba lagi.');
-      console.error('Error rendering page:', error);
+      alert("Terjadi kesalahan saat memuat halaman. Silakan coba lagi.");
+      console.error("Error rendering page:", error);
     });
 });
 
-window.addEventListener('hashchange', () => {
-  console.log('Hash changed:', window.location.hash);
+window.addEventListener("hashchange", () => {
+  console.log("Hash changed:", window.location.hash);
 
   window.scrollTo(0, 0);
 
@@ -42,7 +42,7 @@ window.addEventListener('hashchange', () => {
       window.scrollTo(0, 0);
     })
     .catch((error) => {
-      alert('Terjadi kesalahan saat memuat halaman. Silakan coba lagi.');
-      console.error('Error rendering page:', error);
+      alert("Terjadi kesalahan saat memuat halaman. Silakan coba lagi.");
+      console.error("Error rendering page:", error);
     });
 });

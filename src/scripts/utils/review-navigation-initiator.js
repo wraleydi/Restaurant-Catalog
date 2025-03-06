@@ -1,6 +1,6 @@
-import UrlParser from '../routes/url-parser';
-import { showLoading, hideLoading } from './indikator-loading';
-import { getDetailRestaurant } from '../remote/api-data';
+import UrlParser from "../routes/url-parser";
+import { showLoading, hideLoading } from "./indikator-loading";
+import { getDetailRestaurant } from "../remote/api-data";
 
 const reviewNavigationInitiator = {
   async init({ reviewContainer, prevButton, nextButton }) {
@@ -24,10 +24,14 @@ const reviewNavigationInitiator = {
   },
 
   render() {
-    const visibleReviews = this._customerReviews.slice(this._index, this._index + this._itemsPerPages);
+    const visibleReviews = this._customerReviews.slice(
+      this._index,
+      this._index + this._itemsPerPages
+    );
 
-    this._reviewContainer.innerHTML = visibleReviews.map(
-      (review) => `
+    this._reviewContainer.innerHTML = visibleReviews
+      .map(
+        (review) => `
         <div class="review_item">
           <div class="review_item__header">
             <p class="review_name"><strong>${review.name}</strong></p>
@@ -38,31 +42,32 @@ const reviewNavigationInitiator = {
           </div>
         </div>
       `
-    ).join('');
+      )
+      .join("");
 
     this._updateNavigationButtons();
   },
 
   _updateNavigationButtons() {
     if (this._index + this._itemsPerPages < this._customerReviews.length) {
-      this._nextButton.classList.remove('inActive');
-      this._nextButton.classList.add('active');
+      this._nextButton.classList.remove("inActive");
+      this._nextButton.classList.add("active");
     } else {
-      this._nextButton.classList.add('inActive');
-      this._nextButton.classList.remove('active');
+      this._nextButton.classList.add("inActive");
+      this._nextButton.classList.remove("active");
     }
 
     if (this._index > 0) {
-      this._prevButton.classList.remove('inActive');
-      this._prevButton.classList.add('active');
+      this._prevButton.classList.remove("inActive");
+      this._prevButton.classList.add("active");
     } else {
-      this._prevButton.classList.add('inActive');
-      this._prevButton.classList.remove('active');
+      this._prevButton.classList.add("inActive");
+      this._prevButton.classList.remove("active");
     }
   },
 
   _nextHandler() {
-    this._nextButton.addEventListener('click', async (event) => {
+    this._nextButton.addEventListener("click", async (event) => {
       event.preventDefault();
       showLoading();
 
@@ -76,7 +81,7 @@ const reviewNavigationInitiator = {
   },
 
   _prevHandler() {
-    this._prevButton.addEventListener('click', async (event) => {
+    this._prevButton.addEventListener("click", async (event) => {
       event.preventDefault();
       showLoading();
 

@@ -1,8 +1,8 @@
 class FooterApp extends HTMLElement {
-  static observedAttributes = ['my-footer'];
+  static observedAttributes = ["my-footer"];
   constructor() {
     super();
-    this['_my-footer'] = this.getAttribute('my-footer');
+    this["_my-footer"] = this.getAttribute("my-footer");
   }
 
   connectedCallback() {
@@ -12,9 +12,9 @@ class FooterApp extends HTMLElement {
   render() {
     this.innerHTML = `
         
-      <p>${this['_my-footer']}</p>
+      <p>${this["_my-footer"]}</p>
         `;
   }
 }
 
-customElements.define('footer-app', FooterApp);
+customElements.define("footer-app", FooterApp);

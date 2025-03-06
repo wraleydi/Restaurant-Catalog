@@ -117,4 +117,4 @@ class CtaApp extends HTMLElement {
   }
 }
 
-customElements.define('cta-section', CtaApp);
+customElements.define("cta-section", CtaApp);
