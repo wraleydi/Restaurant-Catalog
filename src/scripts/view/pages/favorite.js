@@ -8,10 +8,9 @@ const Favorite = {
           <div class="header-catalog">
           <div class="title-catalog">
             <img src="./images/icons/storefront.png" alt="storefront" class="material-symbols-outlined" />
-            <h2>Favorite Restaurant</h2>
+            <h2>Favorite</h2>
           </div>
             <div class="search_bar">
-            <span>🔍</span>
             <input type="text" id="search_element" placeholder="search restaurant..." required>
             </div>
           </div>

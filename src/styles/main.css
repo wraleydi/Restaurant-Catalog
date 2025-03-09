@@ -683,6 +683,9 @@ footer p {
   .header-catalog {
     padding-inline: 0rem;
   }
+  .my-navbar-menu.navbar-expand {
+    top: 50px !important;
+  }
 }
 @keyframes slideMenu {
   from {
