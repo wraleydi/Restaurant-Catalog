@@ -11,7 +11,6 @@ const Home = {
             <h2>Catalog</h2>
           </div>
             <div class="search_bar">
-            <span>🔍</span>
             <input type="text" id="search_element" placeholder="search restaurant..." required>
             </div>
           </div>

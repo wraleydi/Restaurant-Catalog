@@ -11,7 +11,7 @@ class HeaderApp extends HTMLElement {
     this.innerHTML = `
     <style>
      header {
-    position: sticky !important;
+    position: sticky;
     top: 0;
     z-index: 9999;
   }
@@ -80,9 +80,8 @@ display: inline-block !important;
     .my-header .title-app {
         font-size:1rem
     }
-    .my-header .title-app a {
-        font-size: 1rem;
-        padding: 0.8rem;
+    .my-header .title-app a h2 {
+        font-size: 1.4rem;
     }
 }
     </style>
