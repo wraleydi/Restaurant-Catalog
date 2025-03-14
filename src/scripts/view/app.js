@@ -18,6 +18,8 @@ class App {
       return;
     }
 
+    document.title = page.title || "Food Shops";
+
     const heroSection = document.querySelector("#hero-section");
     if (heroSection) {
       if (url !== "/" && url !== "/home") {

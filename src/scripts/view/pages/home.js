@@ -2,6 +2,9 @@ import { getListRestaurant } from "../../remote/api-data";
 import templateItemRestaurant from "../templates/template-item-restaurant";
 
 const Home = {
+  
+  title: "Food Shops",
+
   async render() {
     return `
         <div class="catalog-section">

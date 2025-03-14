@@ -2,6 +2,9 @@ import FavoriteRestaurant from "../../../public/data/favorite-restaurant-idb";
 import templateItemRestaurant from "../templates/template-item-restaurant";
 
 const Favorite = {
+
+  title : "Food Shops - Favorite",
+
   async render() {
     return `
         <div class="catalog-section">
