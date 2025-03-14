@@ -107,8 +107,6 @@ module.exports = {
     new ImageminWebpackPlugin({
       plugins: [
         ImageminMozjpeg({ quality: 50, progressive: true }),
-        require("imagemin-pngquant")({ quality: [0.6, 0.8] }), // Kompres PNG
-        require("imagemin-webp")({ quality: 50 }), // Buat WebP lebih ringan
       ],
     }),
   ],

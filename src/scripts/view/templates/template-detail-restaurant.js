@@ -2,18 +2,33 @@ import getRandomPrice from "../../../public/data/random-price-menus";
 import getRandomImage from "../../../public/data/random-image-menus";
 
 const templateDetail = (restaurant) => {
-  const imgApi = `https://restaurant-api.dicoding.dev/images/large/${restaurant.pictureId}`;
+  const imgApi = `https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}`;
+  const preloadLink = `<link rel="preload" as="image" href="${imgApi}">`;
+
+
   return `
-  <div class="restaurant_info" style="
-        background: linear-gradient(115deg ,rgb(19, 24, 29, 0.97) 40%, rgba(19, 24, 29, 0.5)),
-            url('${imgApi}');
-            background-size: cover;
-            background-position: center;
-            width: 100%;
-            height: 90vh;
-            min-height: 300px;
-            color: white;
-        ">
+
+    ${preloadLink}
+
+    <div class="restaurant_info" style="
+
+          background: linear-gradient(115deg ,rgb(19, 24, 29, 0.97) 40%, rgba(19, 24, 29, 0.5)),
+
+                  url('${imgApi}');
+
+                  background-size: cover;
+
+                  background-position: center;
+
+                  width: 100%;
+
+                  height: 90vh;
+
+                  min-height: 300px;
+
+                  color: white;
+
+              ">
         <div class="restaurant_info__content">
         <div class="title_content">
         <h2 style="margin: 0;">${restaurant.name}</h2>
