@@ -11,6 +11,7 @@ const templateDetail = (restaurant) => {
             background-position: center;
             width: 100%;
             height: 90vh;
+            min-height: 300px;
             color: white;
         ">
         <div class="restaurant_info__content">

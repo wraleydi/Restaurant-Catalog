@@ -8,6 +8,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
 const ImageminMozjpeg = require("imagemin-mozjpeg");
+const TerserPlugin = require("terser-webpack-plugin");
 const glob = require("glob");
 
 module.exports = {
@@ -62,7 +63,17 @@ module.exports = {
         },
       },
     },
-    minimizer: [`...`, new CssMinimizerPlugin()],
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false, // Hapus komentar di bundle JS
+        terserOptions: {
+          compress: {
+            drop_console: true, // Hapus console.log di production
+          },
+        },
+      }),
+      new CssMinimizerPlugin(),
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -95,10 +106,9 @@ module.exports = {
     }),
     new ImageminWebpackPlugin({
       plugins: [
-        ImageminMozjpeg({
-          quality: 50,
-          progressive: true,
-        }),
+        ImageminMozjpeg({ quality: 50, progressive: true }),
+        require("imagemin-pngquant")({ quality: [0.6, 0.8] }), // Kompres PNG
+        require("imagemin-webp")({ quality: 50 }), // Buat WebP lebih ringan
       ],
     }),
   ],
