@@ -5,9 +5,9 @@ const templateAlertSucces = () => `
   </symbol>
 </svg>
 
-<div class="alert alert-success d-flex align-items-center w-25 position-fixed bottom-0 start-0 mb-3 ms-3 animate__animated animate__fadeInLeft" style="z-index: 9999; padding: 0.5rem;" role="alert">
+<div class="alert alert-success d-flex align-items-center position-fixed bottom-0 start-0 mb-3 ms-3 animate__animated animate__fadeInLeft" style="z-index: 9999; padding: 0.5rem; width: 350px;"  role="alert">
   <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-  <div>
+  <div class="text-alert">
     Successfully added review
   </div>
   <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -21,9 +21,9 @@ const templateAlertErrorData = () => `
   </symbol>
 </svg>
 
-<div class="alert alert-warning d-flex align-items-center w-25 position-fixed bottom-0 start-0 mb-3 ms-3 animate__animated animate__fadeInLeft" style="z-index: 9999; padding: 0.5rem;" role="alert">
+<div class="alert alert-warning d-flex align-items-center position-fixed bottom-0 start-0 mb-3 ms-3 animate__animated animate__fadeInLeft" style="z-index: 9999; padding: 0.5rem; width: 350px;" role="alert">
   <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-  <div>
+  <div class="text-alert">
     The submitted review is invalid
   </div>
   <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -37,9 +37,9 @@ const templateAlertErrorMain = () => `
 </symbol>
 </svg>
 
-<div class="alert alert-danger d-flex align-items-center w-25 position-fixed bottom-0 start-0 mb-3 ms-3 animate__animated animate__fadeInLeft" style="z-index: 9999; padding: 0.5rem;" role="alert">
+<div class="alert alert-danger d-flex align-items-center position-fixed bottom-0 start-0 mb-3 ms-3 animate__animated animate__fadeInLeft" style="z-index: 9999; padding: 0.5rem; width: 350px;" role="alert">
   <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-  <div>
+  <div class="text-alert">
     Failed to submit review, please try again later
   </div>
   <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>

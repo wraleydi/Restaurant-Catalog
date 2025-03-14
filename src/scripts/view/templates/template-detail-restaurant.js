@@ -105,8 +105,9 @@ const templateDetail = (restaurant) => {
           .join("")}
     </div>
     <div class="review_navigation">
-    <button id="prevButton">&#11164; Prev</button>  
-    <button id="nextButton">Next &#11166;</button>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<button id="prevButton"><i class="fas fa-arrow-left"></i> Prev</button>
+<button id="nextButton">Next <i class="fas fa-arrow-right"></i></button>
     </div>
     </div>
 
