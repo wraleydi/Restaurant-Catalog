@@ -660,6 +660,9 @@ footer p {
   .reviews_restaurant {
     padding: 0;
   }
+  .review_container {
+    padding: 0 1rem 5rem 1rem;
+  }
 }
 @media (max-width: 670px) {
   .my-header {
@@ -695,6 +698,17 @@ footer p {
   }
   .location_restaurant {
     flex-direction: column;
+  }
+  .review_container {
+    flex-direction: column;
+    align-items: center;
+    gap: 130px;
+  }
+  .review_container .review_content {
+    width: 100%;
+  }
+  .review_form {
+    width: 100%;
   }
 }
 @media (max-width: 520px) {
@@ -775,6 +789,16 @@ footer p {
   }
   .my-navbar-menu.navbar-expand {
     top: 45px !important;
+  }
+  .reviews_restaurant .title_section__reviews {
+    font-size: 1.4rem;
+    margin-inline: 1rem;
+  }
+  .review_item .review_item__body {
+    font-size: 0.9rem;
+  }
+  .review_form #addReviewForm input, textarea {
+    font-size: 0.9rem;
   }
 }
 @keyframes slideMenu {
