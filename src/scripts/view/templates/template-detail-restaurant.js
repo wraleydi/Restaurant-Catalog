@@ -22,9 +22,7 @@ const templateDetail = (restaurant) => {
 
                   width: 100%;
 
-                  height: 90vh;
-
-                  min-height: 300px;
+                  max-height: 900px;
 
                   color: white;
 
