@@ -3,8 +3,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
 const ImageminMozjpeg = require("imagemin-mozjpeg");
+const glob = require("glob");
 
 module.exports = {
   entry: {
@@ -20,12 +24,18 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          {
-            loader: "style-loader",
-          },
-          {
-            loader: "css-loader",
-          },
+          process.env.NODE_ENV === "production"
+      ? MiniCssExtractPlugin.loader
+      : "style-loader", // Pakai style-loader di mode development
+    "css-loader",
+    {
+      loader: "postcss-loader",
+      options: {
+        postcssOptions: {
+          plugins: [require("autoprefixer")],
+        },
+      },
+    },
         ],
       },
     ],
@@ -52,9 +62,14 @@ module.exports = {
         },
       },
     },
+    minimizer: [`...`, new CssMinimizerPlugin()],
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new PurgeCSSPlugin({
+      paths: glob.sync(`${path.join(__dirname, "src")}/**/*`, { nodir: true }),
+      safelist: ["show", "collapse", "modal", "fade"], // Kelas Bootstrap yang digunakan dinamis
+    }),
 
     new HtmlWebpackPlugin({
       filename: "index.html",

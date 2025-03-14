@@ -19,6 +19,7 @@ class CtaApp extends HTMLElement {
   align-items: center;
   flex-wrap: wrap;
   overflow: hidden;
+  content-visibility: auto;
 }
 
 .cta_container::before {
@@ -27,7 +28,7 @@ class CtaApp extends HTMLElement {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-image: url('images/cta/cta-image.jpg');
   background-position: center;
   background-repeat: no-repeat;

@@ -25,6 +25,8 @@ img,
 body {
   padding: 0;
   margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  font-display: swap;
 }
 a,
 button,
@@ -800,6 +802,9 @@ footer p {
   .review_form #addReviewForm input, textarea {
     font-size: 0.9rem;
   }
+  .review_form .title_form {
+    width: 100%;
+  }
 }
 @keyframes slideMenu {
   from {
@@ -858,3 +863,8 @@ footer p {
     url("../public/images/drinks/drink-bg.jpg");
   background-size: cover;
 }
+
+#cta-section {
+  content-visibility: auto;
+}
+
