@@ -32,9 +32,5 @@ module.exports = merge(common, {
       filename: "styles.[contenthash].css", // 🔥 Fix: Tambahkan contenthash agar nama file unik
       chunkFilename: "[id].[contenthash].css", // 🔥 Fix: Tambahkan untuk menangani banyak chunk
     }),
-    new BundleAnalyzerPlugin({
-      analyzerPort: "auto",
-      openAnalyzer: true,
-    }),
   ],
 });
