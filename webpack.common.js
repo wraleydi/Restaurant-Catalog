@@ -7,6 +7,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
+const imagemin = require("imagemin");
+const imageminWebp = require("imagemin-webp").default;
 const ImageminMozjpeg = require("imagemin-mozjpeg");
 const TerserPlugin = require("terser-webpack-plugin");
 const glob = require("glob");
@@ -26,17 +28,17 @@ module.exports = {
         test: /\.css$/,
         use: [
           process.env.NODE_ENV === "production"
-      ? MiniCssExtractPlugin.loader
-      : "style-loader", // Pakai style-loader di mode development
-    "css-loader",
-    {
-      loader: "postcss-loader",
-      options: {
-        postcssOptions: {
-          plugins: [require("autoprefixer")],
-        },
-      },
-    },
+            ? MiniCssExtractPlugin.loader
+            : "style-loader", // Pakai style-loader di mode development
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [require("autoprefixer")],
+              },
+            },
+          },
         ],
       },
     ],
@@ -97,6 +99,20 @@ module.exports = {
                 ? ["**/images/heros/**"]
                 : [],
           },
+          transform: async (content, absolutePath) => {
+            if (absolutePath.endsWith(".png") || absolutePath.endsWith(".jpg")) {
+              const optimizedImage = await imagemin([absolutePath], {
+                destination: path.resolve(__dirname, "dist/images"),
+                plugins: [
+                  imageminWebp({ quality: 50 }) // Bisa atur kualitas
+                ],
+              });
+          
+              // Return buffer hasil dari gambar yang sudah dikompresi
+              return optimizedImage.length > 0 ? optimizedImage[0].data : content;
+            }
+            return content;
+          }
         },
       ],
     }),
@@ -107,7 +123,6 @@ module.exports = {
     new ImageminWebpackPlugin({
       plugins: [
         ImageminMozjpeg({ quality: 50, progressive: true }),
-        ImageminWebp({ quality: 50 })
       ],
     }),
   ],

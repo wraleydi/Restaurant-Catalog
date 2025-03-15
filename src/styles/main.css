@@ -499,9 +499,9 @@ input:checked + label .description__menus {
 }
 input::placeholder,
 textarea::placeholder {
-  font-family: "Poppins", sans-serif;
-  font-size: 0.9rem;
-  color: #cfcbcb;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 0.9rem !important;
+  color: #cfcbcb !important;
 }
 .review_form #addReviewForm input {
   background-color: #292c30;

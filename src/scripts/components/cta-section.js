@@ -13,7 +13,7 @@ class CtaApp extends HTMLElement {
         .cta_container {
   position: relative;
   display: flex;
-  height: 100vh;
+  max-height: 900px;
   padding: 5rem;
   justify-content: start;
   align-items: center;
@@ -28,7 +28,8 @@ class CtaApp extends HTMLElement {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  max-height: 900px;
   background-image: url('images/cta/cta-image.jpg');
   background-position: center;
   background-repeat: no-repeat;
