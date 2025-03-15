@@ -1,7 +1,8 @@
 const { merge } = require("webpack-merge");
 const path = require("path");
 const common = require("./webpack.common");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer"); // Import analyzer plugin
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "development",
@@ -9,7 +10,7 @@ module.exports = merge(common, {
   devServer: {
     port: 9000,
     static: path.resolve(__dirname, "dist"),
-    watchFiles: ["index.html", "src**/*/"],
+    watchFiles: ["index.html", "src/**/*"],
     open: true,
     compress: true,
     client: {
@@ -23,6 +24,15 @@ module.exports = merge(common, {
     new BundleAnalyzerPlugin({
       analyzerPort: "auto",
       openAnalyzer: true,
+    }),
+
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/public"),
+          to: path.resolve(__dirname, "dist"),
+        },
+      ],
     }),
   ],
 });

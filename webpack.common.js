@@ -7,8 +7,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
-const imagemin = require("imagemin");
-const imageminWebp = require("imagemin-webp").default;
 const ImageminMozjpeg = require("imagemin-mozjpeg");
 const TerserPlugin = require("terser-webpack-plugin");
 const glob = require("glob");
@@ -29,7 +27,7 @@ module.exports = {
         use: [
           process.env.NODE_ENV === "production"
             ? MiniCssExtractPlugin.loader
-            : "style-loader", // Pakai style-loader di mode development
+            : "style-loader",
           "css-loader",
           {
             loader: "postcss-loader",
@@ -79,51 +77,59 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+
     new PurgeCSSPlugin({
       paths: glob.sync(`${path.join(__dirname, "src")}/**/*`, { nodir: true }),
       safelist: ["show", "collapse", "modal", "fade"], // Kelas Bootstrap yang digunakan dinamis
+    }),
+
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/public"),
+          to: path.resolve(__dirname, "dist"),
+          globOptions: {
+            ignore: ["**/images/**"],
+          },
+        },
+      ],
     }),
 
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: path.resolve(__dirname, "src/templates/index.html"),
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, "src/public/"),
-          to: path.resolve(__dirname, "dist/"),
-          globOptions: {
-            ignore:
-              process.env.NODE_ENV === "production"
-                ? ["**/images/heros/**"]
-                : [],
-          },
-          transform: async (content, absolutePath) => {
-            if (absolutePath.endsWith(".png") || absolutePath.endsWith(".jpg")) {
-              const optimizedImage = await imagemin([absolutePath], {
-                destination: path.resolve(__dirname, "dist/images"),
-                plugins: [
-                  imageminWebp({ quality: 50 }) // Bisa atur kualitas
-                ],
-              });
-          
-              // Return buffer hasil dari gambar yang sudah dikompresi
-              return optimizedImage.length > 0 ? optimizedImage[0].data : content;
-            }
-            return content;
-          }
-        },
-      ],
-    }),
+
     new WorkboxWebpackPlugin.InjectManifest({
       swSrc: path.resolve(__dirname, "src/scripts/sw.js"),
       swDest: "./sw.bundle.js",
     }),
-    new ImageminWebpackPlugin({
-      plugins: [
-        ImageminMozjpeg({ quality: 50, progressive: true }),
-      ],
-    }),
   ],
 };
+
+if (process.env.NODE_ENV === "production") {
+  module.exports.plugins.push(
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/public/images"),
+          to: path.resolve(__dirname, "dist/images"),
+          globOptions: {
+            ignore: [
+              "**/foods/food-bg.jpg",
+              "**/drinks/drink-bg.jpg",
+            ],
+          },
+        },
+      ],
+    }),
+    new ImageminWebpackPlugin({
+      test: /\.(jpe?g|png)$/i,
+      plugins: [
+        ImageminMozjpeg({ quality: 40, progressive: true }),
+        ["imagemin-pngquant", { quality: [0.6, 0.8] }],
+        ["imagemin-jpegtran", { progressive: true }],
+      ],
+    })
+  );
+}
