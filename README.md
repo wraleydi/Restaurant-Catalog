@@ -1,1 +1,2 @@
-tugas Submission akhir Dicoding Front End Expert, membuat aplikasi Restaurant Catalog
+# fisrt version
+ini adalah project restaurant catalog versi pertama/versi awal : https://profound-clafoutis-ed6fa9.netlify.app/
