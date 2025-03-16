@@ -191,7 +191,8 @@ footer p,
 .title_menus h3,
 .review_form #addReviewForm button,
 .review_item .review_item__header,
-#alertContainer {
+#alertContainer,
+#container-item .message-search {
   font-family: Poppins, sans-serif;
   text-align: center;
 }
@@ -313,7 +314,7 @@ footer p,
   justify-content: center;
   font-family: Poppins, sans-serif;
   background-color: #13181d;
-  margin-block: 5rem;
+  margin-block: 8rem 5rem;
   padding-inline: 2rem;
 }
 .restaurant_menus {
@@ -418,7 +419,7 @@ input:checked + label .description__menus {
 
 .reviews_restaurant {
   max-width: 1250px;
-  margin: auto;
+  padding-block: 5rem;
 }
 
 .reviews_restaurant .title_section__reviews {
@@ -866,5 +867,12 @@ footer p {
 
 #cta-section {
   content-visibility: auto;
+}
+
+.message-search {
+  grid-column: 1 / -1;
+  font-size: 1.2rem;
+  color: red;
+  text-align: center;
 }
 

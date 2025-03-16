@@ -49,10 +49,13 @@ const addReviewRestaurant = async (newReview) => {
 
 const getSearchRestaurant = async (query) => {
   try {
+    console.log(`Request API: ${BASE_URL}/search?q=${encodeURIComponent(query)}`);
     const response = await fetch(
       `${BASE_URL}/search?q=${encodeURIComponent(query)}`
     );
     const data = await response.json();
+    console.log("Response API:", data); // Debugging
+    console.log("Data Restaurants:", data.restaurants)
     return data.restaurants;
   } catch (error) {
     alert(error.message);

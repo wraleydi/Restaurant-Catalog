@@ -1,5 +1,6 @@
 import { getListRestaurant } from "../../remote/api-data";
 import templateItemRestaurant from "../templates/template-item-restaurant";
+import SearchInitiator from "../../utils/search-initiator";
 
 const Home = {
   
@@ -30,6 +31,11 @@ const Home = {
     restaurants.forEach((restaurant) => {
       container.innerHTML += templateItemRestaurant(restaurant);
     });
+
+    SearchInitiator.init({
+      restaurantsContainer: document.querySelector('#container-item'),
+      searchElement: document.querySelector('#search_element'),
+    })
   },
 };
 
