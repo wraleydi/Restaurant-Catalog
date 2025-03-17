@@ -24,9 +24,9 @@ Scenario("Add Review From Restaurant", async ({ I }) => {
   I.click('button[type="submit"]');
 
   I.seeElement(".alert.alert-success");
-I.see("Successfully added review", ".alert.alert-success .text-alert");
+  I.see("Successfully added review", ".alert.alert-success .text-alert");
 
-I.click(".alert.alert-success .btn-close");
+  I.click(".alert.alert-success .btn-close");
 
   I.dontSeeElement(".alert.alert-success");
 

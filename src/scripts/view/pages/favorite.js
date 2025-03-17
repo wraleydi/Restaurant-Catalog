@@ -3,8 +3,7 @@ import templateItemRestaurant from "../templates/template-item-restaurant";
 import FavoriteSearchInitiator from "../../utils/search-favorite-initiator";
 
 const Favorite = {
-
-  title : "Food Shops - Favorite",
+  title: "Food Shops - Favorite",
 
   async render() {
     return `
@@ -38,9 +37,9 @@ const Favorite = {
       });
     }
     FavoriteSearchInitiator.init({
-      restaurantsContainer: document.querySelector('#container-item'),
-      searchElement: document.querySelector('#search_element'),
-    })
+      restaurantsContainer: document.querySelector("#container-item"),
+      searchElement: document.querySelector("#search_element"),
+    });
   },
 };
 

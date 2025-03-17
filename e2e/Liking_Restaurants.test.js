@@ -20,9 +20,8 @@ Scenario("Liking and Unliking restaurant from favorite", async ({ I }) => {
 
   I.amOnPage("/#/favorite");
 
-  const visibleRestaurants = await I.grabNumberOfVisibleElements(
-    ".card__content"
-  );
+  const visibleRestaurants =
+    await I.grabNumberOfVisibleElements(".card__content");
   if (visibleRestaurants > 0) {
     const likedRestaurantTitle = await I.grabTextFrom(".card__content");
     strictEqual(firstRestaurantTitle, likedRestaurantTitle);
@@ -32,9 +31,8 @@ Scenario("Liking and Unliking restaurant from favorite", async ({ I }) => {
     I.click("#likeButton");
 
     I.amOnPage("/#/favorite");
-    const updatedRestaurants = await I.grabNumberOfVisibleElements(
-      ".card__content"
-    );
+    const updatedRestaurants =
+      await I.grabNumberOfVisibleElements(".card__content");
     strictEqual(
       updatedRestaurants,
       0,

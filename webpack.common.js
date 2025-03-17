@@ -115,10 +115,7 @@ if (process.env.NODE_ENV === "production") {
           from: path.resolve(__dirname, "src/public/images"),
           to: path.resolve(__dirname, "dist/images"),
           globOptions: {
-            ignore: [
-              "**/foods/food-bg.jpg",
-              "**/drinks/drink-bg.jpg",
-            ],
+            ignore: ["**/foods/food-bg.jpg", "**/drinks/drink-bg.jpg"],
           },
         },
       ],

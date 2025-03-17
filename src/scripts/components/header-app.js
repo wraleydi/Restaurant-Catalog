@@ -114,7 +114,7 @@ display: inline-block !important;
               <li><a href="#/home" tabindex="0">Home</a></li>
               <li><a href="#/favorite" tabindex="0">Favorite</a></li>
               <li>
-                <a href="https://github.com/wraleydi" tabindex="0">About Us</a>
+                <a href="https://github.com/wraleydi" target="_blank" tabindex="0">About Us</a>
               </li>
             </ul>
           </nav>

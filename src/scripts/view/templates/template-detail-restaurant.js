@@ -5,7 +5,6 @@ const templateDetail = (restaurant) => {
   const imgApi = `https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}`;
   const preloadLink = `<link rel="preload" as="image" href="${imgApi}">`;
 
-
   return `
 
     ${preloadLink}

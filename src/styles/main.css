@@ -332,7 +332,7 @@ footer p,
   margin: 0 10px;
   display: flex;
   align-items: start;
-  transition: 1.8s cubic-bezier(.28,-0.03,0,.99);
+  transition: 1.8s cubic-bezier(0.28, -0.03, 0, 0.99);
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
 }
 .card__menus > .wrapper_menus {
@@ -420,6 +420,7 @@ input:checked + label .description__menus {
 .reviews_restaurant {
   max-width: 1250px;
   padding-block: 5rem;
+  margin: autogit;
 }
 
 .reviews_restaurant .title_section__reviews {
@@ -564,7 +565,7 @@ footer p {
     input:checked + label {
       width: 650px;
     }
-    
+
     @media (max-width: 750px) {
       .menus {
         padding-inline: 0.8rem;
@@ -800,7 +801,8 @@ footer p {
   .review_item .review_item__body {
     font-size: 0.9rem;
   }
-  .review_form #addReviewForm input, textarea {
+  .review_form #addReviewForm input,
+  textarea {
     font-size: 0.9rem;
   }
   .review_form .title_form {
@@ -875,4 +877,3 @@ footer p {
   color: red;
   text-align: center;
 }
-

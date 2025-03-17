@@ -6,7 +6,6 @@ import reviewInitiator from "../../utils/riview-initiator";
 import reviewNavigationInitiator from "../../utils/review-navigation-initiator";
 
 const Detail = {
-
   title: "Restaurant Detail",
 
   async render() {
@@ -22,7 +21,7 @@ const Detail = {
     console.log("Parsed ID:", url.id);
     const restaurant = await getDetailRestaurant(url.id);
     console.log("Fetched Restaurant:", restaurant);
-    
+
     document.title = `Food Shops - ${restaurant.name}`;
 
     const container = document.querySelector("#restaurant");
