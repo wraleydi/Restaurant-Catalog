@@ -5,11 +5,10 @@ Feature("Add Review Restaurant");
 Scenario("Add Review From Restaurant", async ({ I }) => {
   I.amOnPage("/");
   I.see("Catalog", ".title-catalog");
-  I.seeElement(".card");
-  I.seeElement(".restaurant_detail a");
+  I.seeElement(".card .card__content");
 
   // eslint-disable-next-line no-undef
-  const firstRestaurant = locate(".restaurant_detail a").first();
+  const firstRestaurant = locate(".card__content").first();
 
   I.click(firstRestaurant);
 
@@ -24,10 +23,14 @@ Scenario("Add Review From Restaurant", async ({ I }) => {
 
   I.click('button[type="submit"]');
 
-  I.seeInPopup("Ulasan berhasil ditambahkan!");
-  I.acceptPopup();
+  I.seeElement(".alert.alert-success");
+I.see("Successfully added review", ".alert.alert-success .text-alert");
 
-  I.see(reviewName, ".review:last-child .review_name");
+I.click(".alert.alert-success .btn-close");
 
-  I.see(reviewText, ".review:last-child .review_text");
+  I.dontSeeElement(".alert.alert-success");
+
+  I.see(reviewName, ".review_item .review_name");
+
+  I.see(reviewText, ".review_item .review_text");
 });
